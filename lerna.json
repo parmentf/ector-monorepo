@@ -1,0 +1,14 @@
+{
+  "command": {
+    "init": {
+      "exact": true
+    },
+    "publish": {
+      "conventionalCommits": true
+    }
+  },
+  "packages": [
+    "packages/*"
+  ],
+  "version": "independent"
+}
