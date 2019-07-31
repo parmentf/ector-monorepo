@@ -30,8 +30,5 @@
   },
   "bugs": {
     "url": "https://github.com/parmentf/ector-monorepo/issues"
-  },
-  "devDependencies": {
-    "jest": "24.8.0"
   }
 }
