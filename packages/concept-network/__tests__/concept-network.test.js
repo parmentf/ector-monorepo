@@ -1,6 +1,6 @@
 'use strict';
 
-const CN = require('..');
+import CN from '../src/concept-network';
 
 describe('@ector/concept-network', () => {
     describe('get node', () => {

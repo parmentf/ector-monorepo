@@ -308,3 +308,20 @@ export function decrementLink(cn, from, to) {
     if (link.coOcc === 0) res.link.splice(linkIndex, 1);
     return res;
 }
+
+export default {
+    addLink,
+    addNode,
+    decrementLink,
+    decrementNode,
+    getLink,
+    getLinkIndex,
+    getLinkIndex2,
+    getLinksFrom,
+    getLinksTo,
+    getNode,
+    getNodeIndex,
+    removeLink,
+    removeLinksOfNode,
+    removeNode
+}
