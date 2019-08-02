@@ -309,19 +309,21 @@ export function decrementLink(cn, from, to) {
     return res;
 }
 
-export default {
-    addLink,
-    addNode,
-    decrementLink,
-    decrementNode,
-    getLink,
-    getLinkIndex,
-    getLinkIndex2,
-    getLinksFrom,
-    getLinksTo,
-    getNode,
-    getNodeIndex,
-    removeLink,
-    removeLinksOfNode,
-    removeNode
-}
+// const CN = {
+//     addLink,
+//     addNode,
+//     decrementLink,
+//     decrementNode,
+//     getLink,
+//     getLinkIndex,
+//     getLinkIndex2,
+//     getLinksFrom,
+//     getLinksTo,
+//     getNode,
+//     getNodeIndex,
+//     removeLink,
+//     removeLinksOfNode,
+//     removeNode
+// };
+
+// export default CN;

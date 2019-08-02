@@ -1,6 +1,6 @@
 'use strict';
 
-import CN from '../src/concept-network';
+import * as CN from '../src/concept-network';
 
 describe('@ector/concept-network', () => {
     describe('get node', () => {
