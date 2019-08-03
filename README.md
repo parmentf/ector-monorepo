@@ -29,4 +29,5 @@ Set `GH_TOKEN` to a token from Settings > Developer settings > Personal access t
 
 ```bash
 npx lerna version --exact --conventional-commits --create-release github
+npx lerna publish from-package
 ```
