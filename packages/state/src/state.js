@@ -1,7 +1,10 @@
 'use strict';
 
+import { assoc, inc, mapObjIndexed, path, pipe, propOr, reduce } from 'ramda';
+import * as CN from '@ector/concept-network';
+
 /**
- * @typedef {Object<string, ConceptNetworkNodeState>} ConceptNetworkState
+ * @typedef {Object<string, ConceptNetworkNodeState>|{}} ConceptNetworkState
  */
 
 /**
@@ -112,4 +115,77 @@ export function setActivationValue(cns = {}, label, value) {
         ...cns,
         [label]: { ...oldNodeState, value },
     };
+}
+
+/**
+ * Propagate the activation values along the links.
+ *
+ * @export
+ * @param {CN.ConceptNetwork} cn
+ * @param {ConceptNetworkState} cns
+ * @param {{ decay?: number, memoryPerf?: number }} [options={ decay: 40, memoryPerf: 100 }]
+ * @returns {ConceptNetworkState}
+ */
+export function propagate(cn, cns, options = { decay: 40, memoryPerf: 100 }) {
+    const nextAge = pipe(
+        propOr(0, 'age'),
+        inc,
+    );
+    const addOneYearToAge = state => assoc('age', nextAge(state), state);
+    const copyValueToOld = state =>
+        assoc('old', propOr(0, 'value', state), state);
+    const initAgeAndOld = pipe(
+        addOneYearToAge,
+        copyValueToOld,
+    );
+    const cns0 = /** @type ConceptNetworkState */ mapObjIndexed(
+        initAgeAndOld,
+        cns,
+    );
+
+    /** @type number[] */
+    const influenceNb = []; // node id -> nb of influence
+    /** @type number[] */
+    const influenceValue = []; // node id -> influence value
+    cn.node.forEach(node => {
+        const label = node.label;
+        if (!cns0[label]) return; // Only nodes with an activation value
+        const old = cns0[label].old;
+        const links = CN.getLinksFrom(cn, label);
+        // for all outgoing links
+        links.forEach(link => {
+            const nodeToId = link.to;
+            influenceValue[nodeToId] =
+                influenceValue[nodeToId] || 0 + 0.5 + old * link.coOcc;
+            influenceNb[nodeToId] = influenceNb[nodeToId] || 0 + 1;
+        });
+    });
+
+    const decay = options.decay || 40;
+    const memoryPerf = options.memoryPerf || 100;
+    const normalNumberComingLinks = 2;
+    const cns1 = reduce(
+        (cnst, node) => {
+            const label = node.label;
+            const state = cns0[label] || { value: 0, old: 0, age: 0 };
+            const minusAge =
+                200 / (1 + Math.exp(-state.age / memoryPerf)) - 100;
+            const nodeId = CN.getNodeIndex(cn, label);
+            const nbIncomings = influenceNb[nodeId];
+            const influence = influenceValue[nodeId]
+                ? (influenceValue[nodeId] /
+                      Math.log(normalNumberComingLinks + nbIncomings)) *
+                  Math.log(normalNumberComingLinks)
+                : 0;
+            let value =
+                state.old - (decay * state.old) / 100 + influence - minusAge;
+            value = Math.min(value, 100);
+            if (value <= 0) return cnst;
+            return { ...cnst, [label]: { ...state, value } };
+        },
+        {},
+        cn.node,
+    );
+
+    return cns1;
 }

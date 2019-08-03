@@ -35,6 +35,7 @@
     "url": "https://github.com/parmentf/ector-monorepo/issues"
   },
   "dependencies": {
-    "@ector/concept-network": "1.0.1"
+    "@ector/concept-network": "1.0.1",
+    "ramda": "0.26.1"
   }
 }
