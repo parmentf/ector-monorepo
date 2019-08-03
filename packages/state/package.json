@@ -1,0 +1,37 @@
+{
+  "name": "@ector/state",
+  "version": "1.0.0",
+  "description": "Allows activation values propagation within a weighted directed graph",
+  "keywords": [
+    "graph",
+    "weighted",
+    "propagation"
+  ],
+  "author": "François Parmentier <francois.parmentier@gmail.com>",
+  "homepage": "https://github.com/parmentf/ector-monorepo#readme",
+  "license": "MIT",
+  "main": "dist/state.js",
+  "directories": {
+    "lib": "dist",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://parmentf@github.com/parmentf/ector-monorepo.git"
+  },
+  "scripts": {
+    "build": "babel --root-mode upward src --out-dir dist",
+    "doc": "documentation readme src/** -f md --section=Functions",
+    "prepublish": "npm run build",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/parmentf/ector-monorepo/issues"
+  }
+}
