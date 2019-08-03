@@ -1,11 +1,10 @@
 {
   "name": "@ector/concept-network",
   "version": "1.0.0",
-  "description": "Weighted directed graph, in which activation values are propagated",
+  "description": "Weighted directed graph",
   "keywords": [
     "graph",
-    "weighted",
-    "propagation"
+    "weighted"
   ],
   "author": "François Parmentier <francois.parmentier@gmail.com>",
   "homepage": "https://github.com/parmentf/ector-monorepo#readme",
