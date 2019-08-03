@@ -31,6 +31,12 @@ npx lerna build
 npm test
 ```
 
+### Continuous Integration
+
+Using [CircleCI](https://circleci.com).
+
+See <https://circleci.com/gh/parmentf/ector-monorepo>.
+
 ### Publishing
 
 (still to be tested)
