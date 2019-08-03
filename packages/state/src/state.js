@@ -138,10 +138,10 @@ export function propagate(cn, cns, options = { decay: 40, memoryPerf: 100 }) {
         addOneYearToAge,
         copyValueToOld,
     );
-    const cns0 = /** @type ConceptNetworkState */ mapObjIndexed(
+    const cns0 = /** @type ConceptNetworkState */(mapObjIndexed(
         initAgeAndOld,
         cns,
-    );
+    ));
 
     /** @type number[] */
     const influenceNb = []; // node id -> nb of influence
