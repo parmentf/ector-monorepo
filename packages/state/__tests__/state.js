@@ -123,7 +123,7 @@ describe('@ector/state', () => {
             });
 
             it('should return one-node-object where threshold = 96', () => {
-                expect(CNS.getActivatedTypedNodes({ a: { value: 100, sb: { value: 95 }}}, '', 96))
+                expect(CNS.getActivatedTypedNodes({ a: { value: 100 }, sb: { value: 95 }}, '', 96))
                     .toEqual({ a: 100 });
             });
         });
