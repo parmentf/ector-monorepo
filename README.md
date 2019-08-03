@@ -12,11 +12,21 @@ Use [conventional commits](https://www.conventionalcommits.org/)
 ### Compilation
 
 ```bash
-npx learn build
+npx lerna build
 ```
 
 ### Test
 
 ```bash
 npm test
+```
+
+### Publishing
+
+(still to be tested)
+
+Set `GH_TOKEN` to a token from Settings > Developer settings > Personal access tokens.
+
+```bash
+npx lerna version --conventional-commits --create-release github
 ```
