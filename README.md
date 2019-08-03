@@ -1,6 +1,7 @@
 # ector-monorepo
 
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+[![CircleCI](https://circleci.com/gh/parmentf/ector-monorepo.svg?style=svg)](https://circleci.com/gh/parmentf/ector-monorepo)
 
 A bunch of ECTOR node packages
 
