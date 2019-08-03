@@ -96,3 +96,20 @@ export function getActivatedTypedNodes(cns, beginning = '', threshold = 95) {
         );
     return nodes;
 }
+
+/**
+ * Set the activation `value` of a node `label`.
+ *
+ * @export
+ * @param {ConceptNetworkState} cns
+ * @param {string} label
+ * @param {number} value
+ * @returns {ConceptNetworkState}
+ */
+export function setActivationValue(cns = {}, label, value) {
+    const oldNodeState = cns[label];
+    return {
+        ...cns,
+        [label]: { ...oldNodeState, value },
+    };
+}

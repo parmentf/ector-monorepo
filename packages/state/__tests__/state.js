@@ -128,4 +128,31 @@ describe('@ector/state', () => {
             });
         });
     });
+
+    describe('set activation value', () => {
+        it('should set a zero', () => {
+            expect(CNS.setActivationValue({ a: { value: 100 }}, 'a', 0))
+                .toEqual({ a: { value: 0 }});
+        });
+
+        it('should set a 75', () => {
+            expect(CNS.setActivationValue({ a: { value: 100 }}, 'a', 75))
+                .toEqual({ a: { value: 75 }});
+        });
+
+        it('should create when no-existing', () => {
+            expect(CNS.setActivationValue({}, 'a', 75))
+                .toEqual({ a: { value: 75 }});
+        });
+
+        it('should create the state', () => {
+            expect(CNS.setActivationValue(undefined, 'a', 75))
+                .toEqual({ a: { value: 75 }});
+        });
+
+        it('should keep the rest of the state', () => {
+            expect(CNS.setActivationValue({ a: { value: 75, old: 80 }}, 'a', 100))
+                .toEqual({ a: { value: 100, old: 80 }});
+        });
+    });
 });
