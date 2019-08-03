@@ -1,6 +1,6 @@
 'use strict';
 
-import { assoc, inc, mapObjIndexed, path, pipe, propOr, reduce } from 'ramda';
+import { assoc, inc, mapObjIndexed, pipe, propOr, reduce } from 'ramda';
 import * as CN from '@ector/concept-network';
 
 /**
