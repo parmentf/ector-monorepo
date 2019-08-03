@@ -28,6 +28,9 @@ jobs:
 
       - run: yarn install
 
+      # Install packages' dependencies on root level
+      - run: yarn run bootstrap
+
       - save_cache:
           paths:
             - node_modules
