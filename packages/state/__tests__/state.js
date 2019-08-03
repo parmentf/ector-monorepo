@@ -1,6 +1,6 @@
 'use strict';
 
-import * as CN from '@ector/concept-network';
+import * as CN from '../../concept-network';
 import * as CNS from '../src/state';
 
 describe('@ector/state', () => {
