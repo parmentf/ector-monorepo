@@ -4,6 +4,16 @@
 
 A bunch of ECTOR node packages
 
+## Packages
+
+- [x] [concept-network](./packages/concept-network)
+- [ ] state
+- [ ] core
+- [ ] cli
+- [ ] backend
+- [ ] browser (or svelte)
+- [ ] hubot
+
 ## Contribution
 
 Use [conventional commits](https://www.conventionalcommits.org/)
