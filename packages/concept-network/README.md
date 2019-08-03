@@ -3,7 +3,7 @@
 [![npm version](https://badge.fury.io/js/%40ector%2Fconcept-network.svg)](https://badge.fury.io/js/%40ector%2Fconcept-network)
 
 Concept Network is weighted directed graph, in which activation values can be
-propagated, using `@ector/concept-network-state`.
+propagated, using [`@ector/state`](../state).
 
 ## Usage
 
@@ -69,8 +69,8 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 
 #### Properties
 
--   `node` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ConceptNetworkNode](#conceptnetworknode)>?**
--   `link` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ConceptNetworkLink](#conceptnetworklink)>?**
+-   `node` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ConceptNetworkNode](#conceptnetworknode)>?** 
+-   `link` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ConceptNetworkLink](#conceptnetworklink)>?** 
 
 ### ConceptNetworkNode
 
@@ -78,7 +78,7 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 
 #### Properties
 
--   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+-   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 -   `occ` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** occurrence of the node
 
 ### ConceptNetworkLink
@@ -97,10 +97,10 @@ Get the node matching `label`.
 
 #### Parameters
 
--   `cn` **[ConceptNetwork](#conceptnetwork)**
+-   `cn` **[ConceptNetwork](#conceptnetwork)** 
 -   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** label of the node to get
 
-Returns **([ConceptNetworkNode](#conceptnetworknode) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))**
+Returns **([ConceptNetworkNode](#conceptnetworknode) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))** 
 
 ### getNodeIndex
 
@@ -108,7 +108,7 @@ Get the index of the node matching `label`.
 
 #### Parameters
 
--   `cn` **[ConceptNetwork](#conceptnetwork)**
+-   `cn` **[ConceptNetwork](#conceptnetwork)** 
 -   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** label of the node to get
 
 Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** \-1 when not found
@@ -119,8 +119,8 @@ Create a node in `cn` or increment its occurrence.
 
 #### Parameters
 
--   `cn` **[ConceptNetwork](#conceptnetwork)**
--   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+-   `cn` **[ConceptNetwork](#conceptnetwork)** 
+-   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
 ### addLink
 
@@ -128,9 +128,9 @@ Create a link between `from` and `to`, and increment `coOcc` by one.
 
 #### Parameters
 
--   `cn` **[ConceptNetwork](#conceptnetwork)**
--   `from` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
--   `to` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+-   `cn` **[ConceptNetwork](#conceptnetwork)** 
+-   `from` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `to` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
 Returns **[ConceptNetwork](#conceptnetwork)** the new ConceptNetwork
 
@@ -140,11 +140,11 @@ Get the link from `from` to `to`.
 
 #### Parameters
 
--   `cn` **[ConceptNetwork](#conceptnetwork)**
+-   `cn` **[ConceptNetwork](#conceptnetwork)** 
 -   `from` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** label of the node from
 -   `to` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** label of the node to
 
-Returns **([ConceptNetworkLink](#conceptnetworklink) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))**
+Returns **([ConceptNetworkLink](#conceptnetworklink) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))** 
 
 ### getLinksFrom
 
@@ -152,10 +152,10 @@ Get the links from `label` node.
 
 #### Parameters
 
--   `cn` **[ConceptNetwork](#conceptnetwork)**
+-   `cn` **[ConceptNetwork](#conceptnetwork)** 
 -   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** label of the node from
 
-Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ConceptNetworkLink](#conceptnetworklink)>**
+Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ConceptNetworkLink](#conceptnetworklink)>** 
 
 ### getLinksTo
 
@@ -163,10 +163,10 @@ Get the links to `label` node.
 
 #### Parameters
 
--   `cn` **[ConceptNetwork](#conceptnetwork)**
+-   `cn` **[ConceptNetwork](#conceptnetwork)** 
 -   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** label of the node to
 
-Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ConceptNetworkLink](#conceptnetworklink)>**
+Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ConceptNetworkLink](#conceptnetworklink)>** 
 
 ### removeNode
 
@@ -174,8 +174,8 @@ Remove the node which `label` is given (and the links to it)
 
 #### Parameters
 
--   `cn` **[ConceptNetwork](#conceptnetwork)**
--   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+-   `cn` **[ConceptNetwork](#conceptnetwork)** 
+-   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
 Returns **[ConceptNetwork](#conceptnetwork)** the new ConceptNetwork
 
@@ -183,10 +183,10 @@ Returns **[ConceptNetwork](#conceptnetwork)** the new ConceptNetwork
 
 #### Parameters
 
--   `nodes` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ConceptNetworkNode](#conceptnetworknode)>**
--   `node` **[ConceptNetworkNode](#conceptnetworknode)**
+-   `nodes` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ConceptNetworkNode](#conceptnetworknode)>** 
+-   `node` **[ConceptNetworkNode](#conceptnetworknode)** 
 
-Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ConceptNetworkNode](#conceptnetworknode)>**
+Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ConceptNetworkNode](#conceptnetworknode)>** 
 
 ### removeLinksOfNode
 
@@ -194,7 +194,7 @@ Remove all links of the node which `label` is given.
 
 #### Parameters
 
--   `cn` **[ConceptNetwork](#conceptnetwork)**
+-   `cn` **[ConceptNetwork](#conceptnetwork)** 
 -   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** label of the node which links are to be
                                      removed
 
@@ -206,7 +206,7 @@ Remove the link from `from` to `to`
 
 #### Parameters
 
--   `cn` **[ConceptNetwork](#conceptnetwork)**
+-   `cn` **[ConceptNetwork](#conceptnetwork)** 
 -   `from` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** label of the outgoing node
 -   `to` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** label of the ingoing node
 
@@ -218,7 +218,7 @@ Get the index of the link from `from` to `to`.
 
 #### Parameters
 
--   `cn` **[ConceptNetwork](#conceptnetwork)**
+-   `cn` **[ConceptNetwork](#conceptnetwork)** 
 -   `from` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** label of the node from
 -   `to` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** label of the node to
 
@@ -230,7 +230,7 @@ Get the index of the link from `fromIndex` to `toIndex`.
 
 #### Parameters
 
--   `cn` **[ConceptNetwork](#conceptnetwork)**
+-   `cn` **[ConceptNetwork](#conceptnetwork)** 
 -   `fromIndex` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** label of the node from
 -   `toIndex` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** label of the node to
 
@@ -242,8 +242,8 @@ Decrement the `occ` of the node which `label` is given by one.
 
 #### Parameters
 
--   `cn` **[ConceptNetwork](#conceptnetwork)**
--   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+-   `cn` **[ConceptNetwork](#conceptnetwork)** 
+-   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
 Returns **[ConceptNetwork](#conceptnetwork)** the new ConceptNetwork
 
@@ -253,7 +253,7 @@ Decrement the coOcc of the link from `from` to `to` by one.
 
 #### Parameters
 
--   `cn` **[ConceptNetwork](#conceptnetwork)**
+-   `cn` **[ConceptNetwork](#conceptnetwork)** 
 -   `from` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** label of the from node
 -   `to` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** label of the to node
 
