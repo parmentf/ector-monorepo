@@ -28,5 +28,5 @@ npm test
 Set `GH_TOKEN` to a token from Settings > Developer settings > Personal access tokens.
 
 ```bash
-npx lerna version --conventional-commits --create-release github
+npx lerna version --exact --conventional-commits --create-release github
 ```
