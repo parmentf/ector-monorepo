@@ -1,6 +1,6 @@
 {
   "name": "@ector/concept-network",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Weighted directed graph",
   "keywords": [
     "graph",
