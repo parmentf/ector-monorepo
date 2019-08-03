@@ -1,5 +1,7 @@
 # `@ector/concept-network`
 
+[![npm version](https://badge.fury.io/js/%40ector%2Fconcept-network.svg)](https://badge.fury.io/js/%40ector%2Fconcept-network)
+
 Concept Network is weighted directed graph, in which activation values can be
 propagated, using `@ector/concept-network-state`.
 
