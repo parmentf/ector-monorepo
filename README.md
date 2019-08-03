@@ -8,7 +8,7 @@ A bunch of ECTOR node packages
 ## Packages
 
 - [x] [concept-network](./packages/concept-network)
-- [ ] state
+- [ ] [state](./packages/state)
 - [ ] core
 - [ ] cli
 - [ ] backend
