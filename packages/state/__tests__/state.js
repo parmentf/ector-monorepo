@@ -39,4 +39,93 @@ describe('@ector/state', () => {
             });
         });
     });
+
+    describe('getters', () => {
+        describe('activation value', () => {
+            it('should get a zero activation value', () => {
+                const cns = { a: { value: 0 }};
+                expect(CNS.getActivationValue(cns, 'a')).toEqual(0);
+            });
+
+            it('should get a 100 activation value', () => {
+                const cns = { a: { value: 100 }};
+                expect(CNS.getActivationValue(cns, 'a')).toEqual(100);
+            });
+
+            it('should get undefined for a non-existing node', () => {
+                const cns = { a: { value: 0 }};
+                expect(CNS.getActivationValue(cns, 'b')).toEqual(undefined);
+            });
+
+            it('should get undefined for a non-existing activation value', () => {
+                const cns = { a: { old: 2 } };
+                expect(CNS.getActivationValue(cns, 'a')).toEqual(undefined);
+            });
+        });
+
+        describe('old activation value', () => {
+            it('should get a zero activation value by default', () => {
+                const cns = { a: { value: 100 }};
+                expect(CNS.getOldActivationValue(cns, 'a')).toEqual(0);
+            });
+
+            it('should get the old activation value', () => {
+                const cns = { a: { old: 50, value: 0 }};
+                expect(CNS.getOldActivationValue(cns, 'a')).toEqual(50);
+            });
+
+            it('should return undefined for a non-existing old value', () => {
+                const cns = { a: { value: 59 }};
+                expect(CNS.getOldActivationValue(cns, 'z')).toEqual(undefined);
+            });
+        });
+
+        describe('get maximum activation value', () => {
+            it('should return 0 when no node activated', () => {
+                expect(CNS.getMaxActivationValue({})).toEqual(0);
+            });
+
+            it('should get the maximum activation value', () => {
+                expect(CNS.getMaxActivationValue({
+                    a: { value: 10 },
+                    b: { value: 20 }
+                })).toEqual(20);
+            });
+
+            it('should get tne maximum activation value for s tokens', () => {
+                expect(CNS.getMaxActivationValue({
+                    sa: { value: 10 },
+                    sb: { value: 20 },
+                    ta: { value: 30 }
+                }, 's')).toEqual(20);
+            });
+        });
+
+        describe('get activated typed nodes', () => {
+            it('should return an empty object when no node is activated', () => {
+                expect(CNS.getActivatedTypedNodes({ a: { value: 50 }}))
+                    .toEqual({});
+            });
+
+            it('should return one-node-object when one node is activated', () => {
+                expect(CNS.getActivatedTypedNodes({ a: { value: 100 }}))
+                    .toEqual({ a: 100 });
+            });
+
+            it('should return two-nodes-object with two activated nodes', () => {
+                expect(CNS.getActivatedTypedNodes({ a: { value: 100 }, b: { value: 95 }}))
+                    .toEqual({ a: 100, b: 95 });
+            });
+
+            it('should return one-node-object of type s', () => {
+                expect(CNS.getActivatedTypedNodes({ a: { value: 100 }, sb: { value: 95 }}, 's'))
+                    .toEqual({ sb: 95 });
+            });
+
+            it('should return one-node-object where threshold = 96', () => {
+                expect(CNS.getActivatedTypedNodes({ a: { value: 100, sb: { value: 95 }}}, '', 96))
+                    .toEqual({ a: 100 });
+            });
+        });
+    });
 });
