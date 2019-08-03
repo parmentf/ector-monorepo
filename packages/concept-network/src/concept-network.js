@@ -1,19 +1,22 @@
 'use strict';
 
 /**
- *
- * @typedef {Object<string, any>} ConceptNetworkNode
- * @property {string} label
- * @property {number} occ
- *
- * @typedef {Object<string, any>} ConceptNetworkLink
- * @property {number} from
- * @property {number} to
- * @property {number} coOcc
- *
  * @typedef {Object<string, any>} ConceptNetwork
  * @property {ConceptNetworkNode[]} [node]
  * @property {ConceptNetworkLink[]} [link]
+ */
+
+/**
+ * @typedef {Object<string, any>} ConceptNetworkNode
+ * @property {string} label
+ * @property {number} occ   occurrence of the node
+ */
+
+/**
+ * @typedef {Object<string, any>} ConceptNetworkLink
+ * @property {number} from  incoming node index
+ * @property {number} to    outcoming node index
+ * @property {number} coOcc co-occurrence of both nodes
  */
 
 /**

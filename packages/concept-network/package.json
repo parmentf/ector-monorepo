@@ -26,9 +26,10 @@
     "url": "git+https://parmentf@github.com/parmentf/ector-monorepo.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1",
     "build": "babel --root-mode upward src --out-dir dist",
-    "prepublish": "npm run build"
+    "doc": "documentation readme src/** -f md --section=Functions",
+    "prepublish": "npm run build",
+    "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
     "url": "https://github.com/parmentf/ector-monorepo/issues"
