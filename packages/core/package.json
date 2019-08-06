@@ -36,5 +36,8 @@
     "url": "https://github.com/parmentf/ector-monorepo/issues"
   },
   "dependencies": {
+    "@ector/concept-network": "1.0.2",
+    "@ector/state": "1.0.0",
+    "sentence-tokenizer": "1.0.1"
   }
 }
