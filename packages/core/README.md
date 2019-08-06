@@ -10,8 +10,8 @@
 const ECTOR = require('@ector/core');
 
 let ector = {
-    bot: 'ECTOR',
-    user: 'Guy'
+    name: 'ECTOR',
+    username: 'Guy'
 };
 
 ector = ECTOR.addEntry('Hello ECTOR!');
@@ -20,7 +20,7 @@ const response = ECTOR.getResponse(ector);
 console.log(response);
 ```
 
-will give
+should give
 
 ```txt
 Hello Guy!
