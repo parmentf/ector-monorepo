@@ -21,6 +21,13 @@ describe('@ector/core', () => {
                 'Achille',
             );
         });
+
+        it('should accept given username', () => {
+            expect(ECTOR.addEntry({ username: 'Dan' }, 'Test')).toHaveProperty(
+                'username',
+                'Dan',
+            );
+        });
     });
 
     describe('addEntry', () => {
