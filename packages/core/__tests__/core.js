@@ -4,10 +4,8 @@ import * as ECTOR from '../src/core';
 
 describe('@ector/core', () => {
     describe('addEntry', () => {
-        it('should in the model', () => {
-            expect(ECTOR.addEntry({
-                username: 'Guy'
-            }, `Hello.`))
+        it('should add entry in the model', () => {
+            expect(ECTOR.addEntry({}, `Hello.`))
             .toEqual({
                 name: 'ECTOR',
                 username: 'Guy',
@@ -29,6 +27,42 @@ describe('@ector/core', () => {
                 },
                 lastSentenceLabel: 'sHello.',
                 lastTokenLabels: ['wHello.']
+            })
+        });
+
+        it('should link sequential tokens', () => {
+            expect(ECTOR.addEntry({}, `Hello ECTOR.`))
+            .toEqual({
+                name: 'ECTOR',
+                username: 'Guy',
+                cn: {
+                    node: [{
+                        label: 'sHello {yourname}.',
+                        occ: 1
+                    }, {
+                        label: 'wHello',
+                        occ: 1
+                    }, {
+                        label: 'w{yourname}.',
+                        occ: 1
+                    }],
+                    link: [{
+                        from: 0, to: 1, coOcc: 1
+                     }, {
+                        from: 0, to: 2, coOcc: 1
+                    }, {
+                        from: 1, to: 2, coOcc: 1
+                    }]
+                },
+                cns: {
+                    Guy: {
+                        'sHello {yourname}.': { value: 100 },
+                        'wHello': { value: 100 },
+                        'w{yourname}.': { value: 100 },
+                     }
+                },
+                lastSentenceLabel: 'sHello {yourname}.',
+                lastTokenLabels: ['wHello', 'w{yourname}.']
             })
         });
     });
