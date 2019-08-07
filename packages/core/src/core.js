@@ -6,9 +6,9 @@ import { ConceptNetworkState, activate } from '@ector/state';
 
 /**
  * @typedef {Object<string, any>} ECTOR
- * @property {string}   [name]          name of the bot
- * @property {string}   [username]      name of the user
- * @property {ConceptNetwork}       [cn]
+ * @property {string}   [name="ECTOR"]      name of the bot
+ * @property {string}   [username="Guy"]    name of the user
+ * @property {ConceptNetwork}   [cn]
  * @property {Object<string, ConceptNetworkState>}  [cns]   One state per
  *                                                          username
  * @property {string}   [lastSentenceLabel] Label of the last entry first sentence
