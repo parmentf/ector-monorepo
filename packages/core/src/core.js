@@ -1,8 +1,9 @@
 'use strict';
 
+import rwc from 'random-weighted-choice';
 import Tokenizer from 'sentence-tokenizer';
-import { ConceptNetwork, addLink, addNode, incrementBeginning, incrementEnd, incrementMiddle } from '@ector/concept-network';
-import { ConceptNetworkState, activate } from '@ector/state';
+import { ConceptNetwork, addLink, addNode, incrementBeginning, incrementEnd, incrementMiddle, getLinksFrom, getLinksTo, getNode } from '@ector/concept-network';
+import { ConceptNetworkState, activate, propagate, getActivationValue, getActivatedTypedNodes, getMaxActivationValue } from '@ector/state';
 
 /**
  * @typedef {Object<string, any>} ECTOR
@@ -13,6 +14,8 @@ import { ConceptNetworkState, activate } from '@ector/state';
  *                                                          username
  * @property {string}   [lastSentenceLabel] Label of the last entry first sentence
  * @property {string[]} [lastTokenLabels]   Labels of the last entry tokens
+ * @property {string}   [response]          Generated response
+ * @property {string[]} [responseLabels]    Nodes of the response
  */
 
 /**
@@ -96,6 +99,150 @@ export function addEntry(ector, entry) {
     return Object.freeze(newEctor);
 }
 
-export function generateResponse(ector) {}
+/**
+ * Chose one token label from the activated ones.
+ *
+ * @param {ConceptNetworkState} state
+ * @param {number}              temperature
+ * @returns {string}    The chosen token
+ */
+function choseToken(state, temperature) {
+    // Warning:  there is a getMaxActivationValue function in @ector/state
+    const maxActivationValue = Object.keys(state)
+        .filter(label => label.startsWith('w'))
+        .reduce((max, label) => Math.max(state[label].value, max), 0);
+    // Warning, there is a getActivatedTypedNodes function in @ector/state
+    const tokens = Object.keys(state)
+        .filter(label => label.startsWith('w'))
+        .filter(label => state[label].value >= maxActivationValue - 10);
+    const toChoose = tokens.map(label => ({ weight: state[label].value, id: label }));
+    const chosenNode = rwc(toChoose, temperature);
+    return chosenNode;
+}
+
+/**
+   * Generate the end of a sentence, adding tokens to the list of token
+   * nodes in phrase.
+   *
+   * @param {ConceptNetwork}        cn          Network of tokens
+   * @param {ConceptNetworkState}   cns         State of the network (activation values)
+   * @param {{ id: string, weight: number }[]}  phraseNodes array of token nodes
+   * @param {number}                temperature
+   * @returns {{ id: string, weight: number }[]} array of token nodes (end of phrase)
+   **/
+function generateForwards(cn, cns, phraseNodes, temperature) {
+    const outgoingLinks = getLinksFrom(cn, phraseNodes[phraseNodes.length -1].id)
+
+    /** @type Array<{ id: string, weight: number }> */
+    const nextNodes = outgoingLinks.reduce((nodes, link) => {
+        const toNode = cn.node[link.to];
+        // When toNode is a word token
+        if (toNode.label.startsWith('w')) {
+            const activationValue = Math.max(getActivationValue(cns, toNode.label), 1);
+            const repeatNb = phraseNodes.filter( ({ id }) => id === toNode.label).length;
+            const len = toNode.label.length;
+            // If the node is not present more than ~3 times
+            if (repeatNb * len <= 5 * 3) {
+                const repetition = 1 + repeatNb * repeatNb * len;
+                return [...nodes, {
+                    id: toNode.label,
+                    weight: link.coOcc * activationValue / repetition
+                }];
+            }
+        }
+        return [...nodes];
+    }, [])
+
+    // Stop condition
+    if (nextNodes.length === 0) {
+      return phraseNodes;
+    }
+    // Choose one node among the tokens following the one at the end of the
+    // phrase
+    var chosenItem = rwc(nextNodes, temperature);
+    var chosenTokenNode = cn.node[chosenItem];
+
+    // Recursively generate the remaining of the phrase
+    return generateForwards(cn, cns, [...phraseNodes, chosenTokenNode], temperature);
+}
+
+/**
+ * Generate the begining of a sentence, adding tokens to the list of token
+ * nodes in phrase.
+ *
+   * @param {ConceptNetwork}        cn          Network of tokens
+   * @param {ConceptNetworkState}   cns         State of the network (activation values)
+   * @param {{ id: string, weight: number }[]}  phraseNodes array of token nodes
+   * @param {number}                temperature
+   * @returns {{ id: string, weight: number }[]} array of token nodes (end of phrase)
+ **/
+function generateBackwards(cn, cns, phraseNodes, temperature) {
+    const incomingLinks = getLinksTo(cn, phraseNodes[0].id)
+    /** @type Array<{ id: string, weight: number }> */
+    const previousNodes = incomingLinks.reduce((nodes, link) => {
+        const fromNode = cn.node[link.from];
+        // When fromNode is a word token
+        if (fromNode.label.startsWith('w')) {
+            const activationValue = Math.max(getActivationValue(cns, fromNode.label), 1);
+            const repeatNb = phraseNodes.filter( ({ id }) => id === fromNode.label).length;
+            const len = fromNode.label.length;
+            // If the node is not present more than ~3 times
+            if (repeatNb * len <= 5 * 3) {
+                const repetition = 1 + repeatNb * repeatNb * len;
+                return [...nodes, {
+                    id: fromNode.label,
+                    weight: link.coOcc * activationValue / repetition
+                }];
+            }
+        }
+        return [...nodes];
+    }, []);
+
+    // Stop condition
+    if (previousNodes.length === 0) {
+      return phraseNodes;
+    }
+    // Choose one node among the tokens following the one at the end of the
+    // phrase
+    const chosenItem = rwc(previousNodes, temperature);
+    const chosenTokenNode = cn.node[chosenItem];
+    // Recursively generate the remaining of the phrase
+    return generateBackwards(cn, cns, [chosenTokenNode, ...phraseNodes], temperature);
+}
+
+/**
+ * Generate a response from the activated nodes.
+ *
+ * @exports
+ * @param {ECTOR} ector
+ * @returns {ECTOR}
+ */
+export function generateResponse(ector) {
+    const username = ector.username || 'Guy';
+    const cn = Object.assign({}, ector.cn);
+    let cns = Object.assign({}, ector.cns);
+    let state = Object.assign({}, cns[username]);
+
+    state = propagate(ector.cn, state);
+
+    const temperature = 60;
+    const initialTokenLabel = choseToken(state, temperature);
+    let responseItems = [{ id: initialTokenLabel, weight: 1 }];
+    responseItems = generateForwards(cn, state, responseItems, temperature);
+    responseItems = generateBackwards(cn, state, responseItems, temperature);
+    // remove first character (type of node)
+    let response = responseItems.map(({ id }) => id.slice(1)).join(' ');
+
+    response = response.replace(/\{yourname\}/g, username);
+    response = response.replace(/\{myname\}/g, ector.name || 'ECTOR');
+
+    cns[username] = state;
+    return Object.freeze({
+        ...ector,
+        cns,
+        response,
+        responseLabels: responseItems.map(({ id }) => id)
+    });
+}
 
 export function getResponse(ector) {}

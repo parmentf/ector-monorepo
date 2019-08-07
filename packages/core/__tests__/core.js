@@ -113,4 +113,38 @@ describe('@ector/core', () => {
             });
         });
     });
+
+    describe('generate response', () => {
+        it('should yield a minimal response', () => {
+            const ector = {
+                name: 'ECTOR',
+                username: 'Guy',
+                cn: {
+                    node: [
+                        {
+                            label: 'sHello.',
+                            occ: 1,
+                        },
+                        {
+                            label: 'wHello.',
+                            occ: 1,
+                            beg: 1,
+                            end: 1
+                        },
+                    ],
+                    link: [{ from: 0, to: 1, coOcc: 1 }],
+                },
+                cns: {
+                    Guy: {
+                        'sHello.': { value: 100 },
+                        'wHello.': { value: 100 },
+                    },
+                },
+                lastSentenceLabel: 'sHello.',
+                lastTokenLabels: ['wHello.'],
+            };
+            expect(ECTOR.generateResponse(ector)).toHaveProperty('response', 'Hello.');
+            expect(ECTOR.generateResponse(ector)).toHaveProperty('responseLabels', ['wHello.']);
+        });
+    });
 });
