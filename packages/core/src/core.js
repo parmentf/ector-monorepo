@@ -1,7 +1,7 @@
 'use strict';
 
 import Tokenizer from 'sentence-tokenizer';
-import { ConceptNetwork, addLink, addNode } from '@ector/concept-network';
+import { ConceptNetwork, addLink, addNode, incrementBeginning, incrementEnd, incrementMiddle } from '@ector/concept-network';
 import { ConceptNetworkState, activate } from '@ector/state';
 
 /**
@@ -53,11 +53,22 @@ export function addEntry(ector, entry) {
 
             const tokens = tokenizer.getTokens(sentenceIndex);
             const { tokenLabels } = tokens.reduce(
-                ({ tokenLabels, prevTokenLabel }, token, _tokenIndex) => {
+                ({ tokenLabels, prevTokenLabel }, token, tokenIndex) => {
                     const tokenLabel = `w${token}`;
                     cn = addNode(cn, tokenLabel);
                     state = activate(state, tokenLabel);
-                    // TODO: add position in sentence (beg, mid, end)
+
+                    // add position in sentence (beg, mid, end)
+                    if (tokenIndex === 0) {
+                        cn = incrementBeginning(cn, tokenLabel);
+                    }
+                    if (tokenIndex !== 0 && tokenIndex < tokens.length - 1) {
+                        cn = incrementMiddle(cn, tokenLabel);
+                    }
+                    if (tokenIndex === tokens.length - 1) {
+                        cn = incrementEnd(cn, tokenLabel);
+                    }
+
                     cn = addLink(cn, sentenceLabel, tokenLabel);
                     if (prevTokenLabel) {
                         cn = addLink(cn, prevTokenLabel, tokenLabel);

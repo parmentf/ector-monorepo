@@ -453,6 +453,105 @@ describe('@ector/concept-network', () => {
         });
     });
 
+    describe('increment node beginning', () => {
+        it('should initialize when beg does not exist', () => {
+            expect(CN.incrementBeginning({
+                node: [{ label: 'Chuck Norris', occ: 1 }]
+            }, 'Chuck Norris'))
+                .toEqual({
+                    node: [{ label: 'Chuck Norris', occ: 1, beg: 1 }]
+                });
+        });
+
+        it('should increment a node with beg of 3', () => {
+            expect(CN.incrementBeginning({
+                node: [{ label: 'Chuck Norris', occ: 4, beg: 3 }]
+            }, 'Chuck Norris'))
+                .toEqual({
+                    node: [{ label: 'Chuck Norris', occ: 4, beg: 4 }]
+                });
+        });
+
+        it('should return the network when the node does not exist', () => {
+            expect(CN.incrementBeginning({
+                node: [{ label: 'World', occ: 4, beg: 1}]
+            }, 'Foo'))
+                .toEqual({
+                    node: [{ label: 'World', occ: 4, beg: 1}]
+                });
+        });
+
+        it('should return the network when no node exist', () => {
+            expect(CN.incrementBeginning({}, 'Bar')).toEqual({});
+        });
+    });
+
+    describe('increment node middle', () => {
+        it('should initialize when mid does not exist', () => {
+            expect(CN.incrementMiddle({
+                node: [{ label: 'Chuck Norris', occ: 1 }]
+            }, 'Chuck Norris'))
+                .toEqual({
+                    node: [{ label: 'Chuck Norris', occ: 1, mid: 1 }]
+                });
+        });
+
+        it('should increment a node with mid of 3', () => {
+            expect(CN.incrementMiddle({
+                node: [{ label: 'Chuck Norris', occ: 4, mid: 3 }]
+            }, 'Chuck Norris'))
+                .toEqual({
+                    node: [{ label: 'Chuck Norris', occ: 4, mid: 4 }]
+                });
+        });
+
+        it('should return the network when the node does not exist', () => {
+            expect(CN.incrementMiddle({
+                node: [{ label: 'World', occ: 4, mid: 1}]
+            }, 'Foo'))
+                .toEqual({
+                    node: [{ label: 'World', occ: 4, mid: 1}]
+                });
+        });
+
+        it('should return the network when no node exist', () => {
+            expect(CN.incrementMiddle({}, 'Bar')).toEqual({});
+        });
+    });
+
+    describe('increment node end', () => {
+        it('should initialize when end does not exist', () => {
+            expect(CN.incrementEnd({
+                node: [{ label: 'Chuck Norris', occ: 1 }]
+            }, 'Chuck Norris'))
+                .toEqual({
+                    node: [{ label: 'Chuck Norris', occ: 1, end: 1 }]
+                });
+        });
+
+        it('should increment a node with end of 3', () => {
+            expect(CN.incrementEnd({
+                node: [{ label: 'Chuck Norris', occ: 4, end: 3 }]
+            }, 'Chuck Norris'))
+                .toEqual({
+                    node: [{ label: 'Chuck Norris', occ: 4, end: 4 }]
+                });
+        });
+
+        it('should return the network when the node does not exist', () => {
+            expect(CN.incrementEnd({
+                node: [{ label: 'World', occ: 4, end: 1}]
+            }, 'Foo'))
+                .toEqual({
+                    node: [{ label: 'World', occ: 4, end: 1}]
+                });
+        });
+
+        it('should return the network when no node exist', () => {
+            expect(CN.incrementEnd({}, 'Bar')).toEqual({});
+        });
+    });
+
     describe('decrement link', () => {
         it('should decrement a coOcc value of 2', () => {
             expect(CN.decrementLink({

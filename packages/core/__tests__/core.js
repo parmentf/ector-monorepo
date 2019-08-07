@@ -1,6 +1,7 @@
 'use strict';
 
 import * as ECTOR from '../src/core';
+import { incrementBeginning } from '@ector/concept-network';
 
 describe('@ector/core', () => {
     describe('names', () => {
@@ -44,6 +45,8 @@ describe('@ector/core', () => {
                         {
                             label: 'wHello.',
                             occ: 1,
+                            beg: 1,
+                            end: 1
                         },
                     ],
                     link: [{ from: 0, to: 1, coOcc: 1 }],
@@ -72,10 +75,12 @@ describe('@ector/core', () => {
                         {
                             label: 'wHello',
                             occ: 1,
+                            beg: 1
                         },
                         {
                             label: 'w{yourname}.',
                             occ: 1,
+                            end: 1
                         },
                     ],
                     link: [
