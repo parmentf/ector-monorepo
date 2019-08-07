@@ -3,6 +3,16 @@
 import * as ECTOR from '../src/core';
 
 describe('@ector/core', () => {
+    describe('names', () => {
+        it('should give default name', () => {
+            expect(ECTOR.addEntry({}, 'Test')).toHaveProperty('name', 'ECTOR');
+        });
+
+        it('should give default username', () => {
+            expect(ECTOR.addEntry({}, 'Test')).toHaveProperty('username', 'Guy');
+        });
+    });
+
     describe('addEntry', () => {
         it('should add entry in the model', () => {
             expect(ECTOR.addEntry({}, `Hello.`))
