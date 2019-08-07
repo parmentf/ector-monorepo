@@ -52,9 +52,8 @@ export function addEntry(ector, entry) {
             state = activate(state, sentenceLabel);
 
             const tokens = tokenizer.getTokens(sentenceIndex);
-            let prevTokenLabel;
-            const tokenLabels = tokens.reduce(
-                (tokenLabels, token, _tokenIndex) => {
+            const { tokenLabels } = tokens.reduce(
+                ({ tokenLabels, prevTokenLabel }, token, _tokenIndex) => {
                     const tokenLabel = `w${token}`;
                     cn = addNode(cn, tokenLabel);
                     state = activate(state, tokenLabel);
@@ -64,9 +63,9 @@ export function addEntry(ector, entry) {
                         cn = addLink(cn, prevTokenLabel, tokenLabel);
                     }
                     prevTokenLabel = tokenLabel;
-                    return [...tokenLabels, tokenLabel];
+                    return { tokenLabels: [...tokenLabels, tokenLabel], prevTokenLabel };
                 },
-                [],
+                { tokenLabels: [], prevTokenLabel: null },
             );
             return [...labels, ...tokenLabels];
         },
