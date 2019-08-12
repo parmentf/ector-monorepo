@@ -36,6 +36,20 @@ Hello Guy!
     -   [Properties](#properties)
 -   [addEntry](#addentry)
     -   [Parameters](#parameters)
+-   [choseToken](#chosetoken)
+    -   [Parameters](#parameters-1)
+-   [generateForwards](#generateforwards)
+    -   [Parameters](#parameters-2)
+-   [nextNodes](#nextnodes)
+-   [generateBackwards](#generatebackwards)
+    -   [Parameters](#parameters-3)
+-   [previousNodes](#previousnodes)
+-   [generateResponse](#generateresponse)
+    -   [Parameters](#parameters-4)
+-   [linkNodesToLastSentence](#linknodestolastsentence)
+    -   [Parameters](#parameters-5)
+-   [getResponse](#getresponse)
+    -   [Parameters](#parameters-6)
 
 ### ECTOR
 
@@ -50,6 +64,8 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
                                                              username
 -   `lastSentenceLabel` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Label of the last entry first sentence
 -   `lastTokenLabels` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>?** Labels of the last entry tokens
+-   `response` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Generated response
+-   `responseLabels` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>?** Nodes of the response
 
 ### addEntry
 
@@ -61,3 +77,82 @@ Add an entry to ector's model.
 -   `entry` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
 Returns **([ECTOR](#ector) \| [Error](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error))** 
+
+### choseToken
+
+Chose one token label from the activated ones.
+
+#### Parameters
+
+-   `state` **ConceptNetworkState** 
+-   `temperature` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+
+Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The chosen token
+
+### generateForwards
+
+Generate the end of a sentence, adding tokens to the list of token
+nodes in phrase.
+
+#### Parameters
+
+-   `cn` **ConceptNetwork** Network of tokens
+-   `cns` **ConceptNetworkState** State of the network (activation values)
+-   `phraseNodes` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;{id: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), weight: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}>** array of token nodes
+-   `temperature` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+
+Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;{id: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), weight: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}>** array of token nodes (end of phrase)
+\*
+
+### nextNodes
+
+### generateBackwards
+
+Generate the begining of a sentence, adding tokens to the list of token
+nodes in phrase.
+
+#### Parameters
+
+-   `cn` **ConceptNetwork** Network of tokens
+-   `cns` **ConceptNetworkState** State of the network (activation values)
+-   `phraseNodes` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;{id: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), weight: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}>** array of token nodes
+-   `temperature` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+
+Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;{id: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), weight: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}>** array of token nodes (end of phrase)
+\*
+
+### previousNodes
+
+### generateResponse
+
+Generate a response from the activated nodes.
+
+#### Parameters
+
+-   `ector` **[ECTOR](#ector)** 
+
+Returns **[ECTOR](#ector)** 
+
+### linkNodesToLastSentence
+
+Link nodes to the previous sentence node label (this is automatically set by
+addEntry, it is the node label of the first sentence of the entry).
+
+Used with the nodes returned by addEntry.
+
+#### Parameters
+
+-   `ector` **[ECTOR](#ector)** 
+-   `nodeLabels` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** Array of nodes labels. (optional, default `[]`)
+
+Returns **[ECTOR](#ector)** \*
+
+### getResponse
+
+Get the response already generated with generateResponse.
+
+#### Parameters
+
+-   `ector` **[ECTOR](#ector)** 
+
+Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
