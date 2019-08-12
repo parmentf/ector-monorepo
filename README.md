@@ -9,7 +9,7 @@ A bunch of ECTOR node packages
 
 - [x] [concept-network](./packages/concept-network)
 - [x] [state](./packages/state)
-- [ ] [core](./packages/core)
+- [x] [core](./packages/core)
 - [ ] cli
 - [ ] backend
 - [ ] browser (or svelte)
