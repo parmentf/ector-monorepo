@@ -1,6 +1,6 @@
 {
   "name": "@ector/state",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Allows activation values propagation within a weighted directed graph",
   "keywords": [
     "graph",
@@ -35,7 +35,7 @@
     "url": "https://github.com/parmentf/ector-monorepo/issues"
   },
   "dependencies": {
-    "@ector/concept-network": "1.0.2",
+    "@ector/concept-network": "1.1.0",
     "ramda": "0.26.1"
   }
 }
