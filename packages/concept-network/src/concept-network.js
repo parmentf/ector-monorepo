@@ -10,6 +10,9 @@
  * @typedef {Object<string, any>} ConceptNetworkNode
  * @property {string} label
  * @property {number} occ   occurrence of the node
+ * @property {number} [beg] Times at the beginning of a sentence
+ * @property {number} [mid] Times at the middle of a sentence
+ * @property {number} [end] Times at the end of a sentence
  */
 
 /**
@@ -310,4 +313,70 @@ export function decrementLink(cn, from, to) {
     link.coOcc -= 1;
     if (link.coOcc === 0) res.link.splice(linkIndex, 1);
     return res;
+}
+
+/**
+ * Increment the `beg` of the node which `label` is given by one.
+ *
+ * @export
+ * @param {ConceptNetwork}  cn
+ * @param {string}          label
+ * @returns {ConceptNetwork} the new ConceptNetwork
+ */
+export function incrementBeginning(cn, label) {
+    const res = Object.assign({}, cn);
+    if (!res.node) {
+        return Object.freeze(res);
+    }
+    const node = getNode(res, label);
+    const nodeIndex = getNodeIndex(cn, label);
+    if (node) {
+        node.beg = (node.beg || 0) + 1;
+        res.node[nodeIndex] = node;
+    }
+    return Object.freeze(res);
+}
+
+/**
+ * Increment the `mid` of the node which `label` is given by one.
+ *
+ * @export
+ * @param {ConceptNetwork}  cn
+ * @param {string}          label
+ * @returns {ConceptNetwork} the new ConceptNetwork
+ */
+export function incrementMiddle(cn, label) {
+    const res = Object.assign({}, cn);
+    if (!res.node) {
+        return Object.freeze(res);
+    }
+    const node = getNode(res, label);
+    const nodeIndex = getNodeIndex(cn, label);
+    if (node) {
+        node.mid = (node.mid || 0) + 1;
+        res.node[nodeIndex] = node;
+    }
+    return Object.freeze(res);
+}
+
+/**
+ * Increment the `end` of the node which `label` is given by one.
+ *
+ * @export
+ * @param {ConceptNetwork}  cn
+ * @param {string}          label
+ * @returns {ConceptNetwork} the new ConceptNetwork
+ */
+export function incrementEnd(cn, label) {
+    const res = Object.assign({}, cn);
+    if (!res.node) {
+        return Object.freeze(res);
+    }
+    const node = getNode(res, label);
+    const nodeIndex = getNodeIndex(cn, label);
+    if (node) {
+        node.end = (node.end || 0) + 1;
+        res.node[nodeIndex] = node;
+    }
+    return Object.freeze(res);
 }

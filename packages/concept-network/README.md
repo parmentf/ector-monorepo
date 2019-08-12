@@ -62,6 +62,12 @@ cn = conceptNetwork.addLink(cn, 'node1', 'node2');
     -   [Parameters](#parameters-13)
 -   [decrementLink](#decrementlink)
     -   [Parameters](#parameters-14)
+-   [incrementBeginning](#incrementbeginning)
+    -   [Parameters](#parameters-15)
+-   [incrementMiddle](#incrementmiddle)
+    -   [Parameters](#parameters-16)
+-   [incrementEnd](#incrementend)
+    -   [Parameters](#parameters-17)
 
 ### ConceptNetwork
 
@@ -80,6 +86,9 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 
 -   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 -   `occ` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** occurrence of the node
+-   `beg` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)?** Times at the beginning of a sentence
+-   `mid` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)?** Times at the middle of a sentence
+-   `end` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)?** Times at the end of a sentence
 
 ### ConceptNetworkLink
 
@@ -258,3 +267,36 @@ Decrement the coOcc of the link from `from` to `to` by one.
 -   `to` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** label of the to node
 
 Returns **[ConceptNetwork](#conceptnetwork)** new ConceptNetwork
+
+### incrementBeginning
+
+Increment the `beg` of the node which `label` is given by one.
+
+#### Parameters
+
+-   `cn` **[ConceptNetwork](#conceptnetwork)** 
+-   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+Returns **[ConceptNetwork](#conceptnetwork)** the new ConceptNetwork
+
+### incrementMiddle
+
+Increment the `mid` of the node which `label` is given by one.
+
+#### Parameters
+
+-   `cn` **[ConceptNetwork](#conceptnetwork)** 
+-   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+Returns **[ConceptNetwork](#conceptnetwork)** the new ConceptNetwork
+
+### incrementEnd
+
+Increment the `end` of the node which `label` is given by one.
+
+#### Parameters
+
+-   `cn` **[ConceptNetwork](#conceptnetwork)** 
+-   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+
+Returns **[ConceptNetwork](#conceptnetwork)** the new ConceptNetwork

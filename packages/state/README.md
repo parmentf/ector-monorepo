@@ -75,10 +75,10 @@ Activate the node which `label` is given
 
 #### Parameters
 
--   `cns` **[ConceptNetworkState](#conceptnetworkstate)**
--   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+-   `cns` **[ConceptNetworkState](#conceptnetworkstate)** 
+-   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
-Returns **[ConceptNetworkState](#conceptnetworkstate)**
+Returns **[ConceptNetworkState](#conceptnetworkstate)** 
 
 ### getActivationValue
 
@@ -86,10 +86,10 @@ Get the activation value of the node which `label` is given
 
 #### Parameters
 
--   `cns` **[ConceptNetworkState](#conceptnetworkstate)**
--   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+-   `cns` **[ConceptNetworkState](#conceptnetworkstate)** 
+-   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
-Returns **([number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))**
+Returns **([number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))** 
 
 ### getOldActivationValue
 
@@ -97,10 +97,10 @@ Get the activation value of a node (which `label` is given)
 
 #### Parameters
 
--   `cns` **[ConceptNetworkState](#conceptnetworkstate)**
--   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+-   `cns` **[ConceptNetworkState](#conceptnetworkstate)** 
+-   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
 
-Returns **([number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))**
+Returns **([number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))** 
 
 ### getMaxActivationValue
 
@@ -109,10 +109,10 @@ Get the maximum activation value of all nodes which label starts with
 
 #### Parameters
 
--   `cns` **[ConceptNetworkState](#conceptnetworkstate)**
+-   `cns` **[ConceptNetworkState](#conceptnetworkstate)** 
 -   `beginning` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**  (optional, default `''`)
 
-Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**
+Returns **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
 ### getActivatedTypedNodes
 
@@ -122,7 +122,7 @@ equal to `threshold`.
 
 #### Parameters
 
--   `cns` **[ConceptNetworkState](#conceptnetworkstate)**
+-   `cns` **[ConceptNetworkState](#conceptnetworkstate)** 
 -   `beginning` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**  (optional, default `''`)
 -   `threshold` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**  (optional, default `95`)
 
@@ -133,10 +133,10 @@ Set the activation `value` of a node `label`.
 #### Parameters
 
 -   `cns` **[ConceptNetworkState](#conceptnetworkstate)**  (optional, default `{}`)
--   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
--   `value` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**
+-   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** 
+-   `value` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 
-Returns **[ConceptNetworkState](#conceptnetworkstate)**
+Returns **[ConceptNetworkState](#conceptnetworkstate)** 
 
 ### propagate
 
@@ -144,11 +144,11 @@ Propagate the activation values along the links.
 
 #### Parameters
 
--   `cn` **CN.ConceptNetwork**
--   `cns` **[ConceptNetworkState](#conceptnetworkstate)**
+-   `cn` **ConceptNetwork** 
+-   `cns` **[ConceptNetworkState](#conceptnetworkstate)** 
 -   `options`   (optional, default `{decay:40,memoryPerf:100}`)
 
-Returns **[ConceptNetworkState](#conceptnetworkstate)**
+Returns **[ConceptNetworkState](#conceptnetworkstate)** 
 
 ### mapObjIndexed
 

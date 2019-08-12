@@ -1,7 +1,7 @@
 'use strict';
 
 import { assoc, inc, mapObjIndexed, pipe, propOr, reduce } from 'ramda';
-import * as CN from '@ector/concept-network';
+import { ConceptNetwork, getLinksFrom, getNodeIndex } from '@ector/concept-network';
 
 /**
  * @typedef {Object<string, ConceptNetworkNodeState>|{}} ConceptNetworkState
@@ -121,7 +121,7 @@ export function setActivationValue(cns = {}, label, value) {
  * Propagate the activation values along the links.
  *
  * @export
- * @param {CN.ConceptNetwork} cn
+ * @param {ConceptNetwork} cn
  * @param {ConceptNetworkState} cns
  * @param {{ decay?: number, memoryPerf?: number }} [options={ decay: 40, memoryPerf: 100 }]
  * @returns {ConceptNetworkState}
@@ -151,7 +151,7 @@ export function propagate(cn, cns, options = { decay: 40, memoryPerf: 100 }) {
         const label = node.label;
         if (!cns0[label]) return; // Only nodes with an activation value
         const old = cns0[label].old;
-        const links = CN.getLinksFrom(cn, label);
+        const links = getLinksFrom(cn, label);
         // for all outgoing links
         links.forEach(link => {
             const nodeToId = link.to;
@@ -170,7 +170,7 @@ export function propagate(cn, cns, options = { decay: 40, memoryPerf: 100 }) {
             const state = cns0[label] || { value: 0, old: 0, age: 0 };
             const minusAge =
                 200 / (1 + Math.exp(-state.age / memoryPerf)) - 100;
-            const nodeId = CN.getNodeIndex(cn, label);
+            const nodeId = getNodeIndex(cn, label);
             const nbIncomings = influenceNb[nodeId];
             const influence = influenceValue[nodeId]
                 ? (influenceValue[nodeId] /
