@@ -2,8 +2,8 @@
 
 import rwc from 'random-weighted-choice';
 import Tokenizer from 'sentence-tokenizer';
-import { ConceptNetwork, addLink, addNode, incrementBeginning, incrementEnd, incrementMiddle, getLinksFrom, getLinksTo, getNode } from '@ector/concept-network';
-import { ConceptNetworkState, activate, propagate, getActivationValue, getActivatedTypedNodes, getMaxActivationValue } from '@ector/state';
+import { ConceptNetwork, addLink, addNode, incrementBeginning, incrementEnd, incrementMiddle, getLinksFrom, getLinksTo } from '@ector/concept-network';
+import { ConceptNetworkState, activate, propagate, getActivationValue } from '@ector/state';
 
 /**
  * @typedef {Object<string, any>} ECTOR
@@ -245,4 +245,30 @@ export function generateResponse(ector) {
     });
 }
 
-export function getResponse(ector) {}
+/**
+ * Link nodes to the previous sentence node label (this is automatically set by
+ * addEntry, it is the node label of the first sentence of the entry).
+ *
+ * Used with the nodes returned by addEntry.
+ *
+ * @param {ECTOR} ector
+ * @param {Array<string>} [nodeLabels=[]] Array of nodes labels.
+ * @returns {ECTOR}
+ **/
+export function linkNodesToLastSentence(ector, nodeLabels = []) {
+    const cn = nodeLabels.reduce((cn, nodeLabel) => {
+        // QUESTION: is it the right direction(?)
+        return addLink(cn, nodeLabel, ector.lastSentenceLabel);
+    }, ector.cn)
+    return Object.freeze({ ...ector, cn })
+}
+
+/**
+ * Get the response already generated with generateResponse.
+ *
+ * @param {ECTOR} ector
+ * @returns {string}
+ */
+export function getResponse(ector) {
+    return ector.response || '';
+}

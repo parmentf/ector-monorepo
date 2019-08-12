@@ -1,7 +1,6 @@
 'use strict';
 
 import * as ECTOR from '../src/core';
-import { incrementBeginning } from '@ector/concept-network';
 
 describe('@ector/core', () => {
     describe('names', () => {
@@ -145,6 +144,51 @@ describe('@ector/core', () => {
             };
             expect(ECTOR.generateResponse(ector)).toHaveProperty('response', 'Hello.');
             expect(ECTOR.generateResponse(ector)).toHaveProperty('responseLabels', ['wHello.']);
+        });
+    });
+
+    describe('link nodes to last sentence', () => {
+        it('should not create links when no lastSentenceNode exist', function () {
+            /** @type ECTOR.ECTOR */
+            let ector = ECTOR.addEntry({}, "Hello.");
+            const previousLinksNb = ector.cn.link.length;
+            ector = { ...ector, lastSentenceLabel: null };
+            ector = ECTOR.linkNodesToLastSentence(ector, ['wHello.']);
+            expect(ector.cn.link.length).toBe(previousLinksNb);
+        });
+
+        it('should not create link when [] is given', function () {
+            /** @type ECTOR.ECTOR */
+            let ector = ECTOR.addEntry({}, "Hello.");
+            const previousLinksNb = ector.cn.link.length;
+            ector = ECTOR.linkNodesToLastSentence(ector, []);
+            expect(ector.cn.link.length).toBe(previousLinksNb);
+        });
+
+        it('should create links', function () {
+            /** @type ECTOR.ECTOR */
+            let ector = ECTOR.addEntry({}, "Hello.");
+            const previousLinksNb = ector.cn.link.length;
+            ector = ECTOR.linkNodesToLastSentence(ector, ['wHello.']);
+            expect(ector.cn.link.length).toBeGreaterThan(previousLinksNb);
+
+            // 1 link from sentenceNode to the only tokenNode
+            // sHello. (1) -> wHello. (2)
+        });
+    });
+
+    describe('get response', () => {
+        it('should return the last generated response', () => {
+            /** @type ECTOR.ECTOR */
+            let ector = ECTOR.addEntry({}, "Hello.");
+            ector = ECTOR.generateResponse(ector);
+            expect(ECTOR.getResponse(ector)).toBe('Hello.');
+        });
+
+        it('should return empty string when no response was generated', () => {
+            /** @type ECTOR.ECTOR */
+            let ector = ECTOR.addEntry({}, "Hello.");
+            expect(ECTOR.getResponse(ector)).toBe('');
         });
     });
 });
