@@ -1,6 +1,11 @@
 'use strict';
 
 const yargs = require('yargs/yargs');
+
+/**
+ * Main function of the Command Line Interface
+ * @param {string} cwd  The current working directory path
+ */
 const cli = function cli(cwd) {
   const parser = yargs(null, cwd);
 
