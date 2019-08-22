@@ -14,7 +14,7 @@ describe('@ector/cli ector', () => {
   );
 
   it('-v should give version', () =>
-    tester(require.resolve('../bin/cli'), '-v')
+    tester(require.resolve('../bin/cli'), '-V')
       .then(({ code, stdout, stderr }) => {
         expect(code).toBe(0);
         expect(stdout).toBe(version);

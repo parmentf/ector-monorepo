@@ -10,12 +10,12 @@ const cli = function cli(cwd) {
   const parser = yargs(null, cwd);
 
   parser.alias('h', 'help');
-  parser.alias('v', 'version');
+  parser.alias('V', 'version');
 
   parser.usage(
     "$0",
     // @ts-ignore
-    "TODO: description",
+    "Interactive command line interface to ECTOR, the learning chatterbot.",
     yargs => {
       yargs.options({
         // TODO: options
