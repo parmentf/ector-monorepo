@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://parmentf@github.com/parmentf/ector-monorepo.git"
+    "url": "git+https://github.com/parmentf/ector-monorepo.git"
   },
   "scripts": {
     "build": "babel --root-mode upward src --out-dir dist",
