@@ -9,6 +9,7 @@ const cli = function cli(cwd) {
 
   parser.usage(
     "$0",
+    // @ts-ignore
     "TODO: description",
     yargs => {
       yargs.options({
