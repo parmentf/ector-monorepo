@@ -1,6 +1,6 @@
 {
   "name": "@ector/state",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Allows activation values propagation within a weighted directed graph",
   "keywords": [
     "graph",
