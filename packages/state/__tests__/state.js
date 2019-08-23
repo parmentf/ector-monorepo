@@ -157,6 +157,10 @@ describe('@ector/state', () => {
     });
 
     describe('propagate', () => {
+        it('should not crash when no concept network', () => {
+            expect(CNS.propagate(null, null)).toEqual({});
+        });
+
         it('should deactivate node without afferent links', () => {
             const cn = {
                 node: [{ label: 'a', occ: 1 }, { label: 'b', occ: 1}],
