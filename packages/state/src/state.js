@@ -147,7 +147,7 @@ export function propagate(cn, cns, options = { decay: 40, memoryPerf: 100 }) {
     const influenceNb = []; // node id -> nb of influence
     /** @type number[] */
     const influenceValue = []; // node id -> influence value
-    cn.node.forEach(node => {
+    cn && cn.node && cn.node.forEach(node => {
         const label = node.label;
         if (!cns0[label]) return; // Only nodes with an activation value
         const old = cns0[label].old;
@@ -184,7 +184,7 @@ export function propagate(cn, cns, options = { decay: 40, memoryPerf: 100 }) {
             return { ...cnst, [label]: { ...state, value } };
         },
         {},
-        cn.node,
+        cn ? cn.node : [],
     );
 
     return cns1;
