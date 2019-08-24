@@ -2,7 +2,7 @@
 
 import rwc from 'random-weighted-choice';
 import Tokenizer from 'sentence-tokenizer';
-import { ConceptNetwork, addLink, addNode, incrementBeginning, incrementEnd, incrementMiddle, getLinksFrom, getLinksTo } from '@ector/concept-network';
+import { ConceptNetwork, addLink, addNode, incrementBeginning, incrementEnd, incrementMiddle, getLinksFrom, getLinksTo, getNodeIndex } from '@ector/concept-network';
 import { ConceptNetworkState, activate, propagate, getActivationValue } from '@ector/state';
 
 /**
@@ -159,8 +159,9 @@ function generateForwards(cn, cns, phraseNodes, temperature) {
     }
     // Choose one node among the tokens following the one at the end of the
     // phrase
-    var chosenItem = rwc(nextNodes, temperature);
-    var chosenTokenNode = cn.node[chosenItem];
+    const chosenItem = rwc(nextNodes, temperature);
+    const chosenItemIndex = getNodeIndex(cn, chosenItem);
+    const chosenTokenNode = { id: cn.node[chosenItemIndex].label, weight: -1 };
 
     // Recursively generate the remaining of the phrase
     return generateForwards(cn, cns, [...phraseNodes, chosenTokenNode], temperature);
@@ -205,7 +206,9 @@ function generateBackwards(cn, cns, phraseNodes, temperature) {
     // Choose one node among the tokens following the one at the end of the
     // phrase
     const chosenItem = rwc(previousNodes, temperature);
-    const chosenTokenNode = cn.node[chosenItem];
+    const chosenItemIndex = getNodeIndex(cn, chosenItem);
+    const chosenTokenNode = { id: cn.node[chosenItemIndex].label, weight: -1 };
+
     // Recursively generate the remaining of the phrase
     return generateBackwards(cn, cns, [chosenTokenNode, ...phraseNodes], temperature);
 }
