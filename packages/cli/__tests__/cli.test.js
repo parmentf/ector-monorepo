@@ -77,7 +77,19 @@ describe('@ector/cli ector', () => {
             }));
     });
 
-    describe('reset', () => {});
+    describe('reset', () => {
+        it('should give an empty ECTOR', () =>
+            tester(require.resolve('../bin/cli'), 'reset').then(
+                ({ code, stdout, stderr }) => {
+                    expect(code).toBe(0);
+                    expect(stdout).toBe('');
+                    expect(stderr).toBe('');
+                    const fileContent = getEctorFileContent();
+                    expect(fileContent).toStrictEqual({});
+                },
+            ));
+    });
+
     describe('learn', () => {});
     describe('about', () => {});
 });

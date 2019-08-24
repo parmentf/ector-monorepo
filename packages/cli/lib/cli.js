@@ -2,7 +2,7 @@
 
 const ECTOR = require('@ector/core');
 const yargs = require('yargs/yargs');
-const { getEctorFileContent, setEctorFileContent } = require('./utils');
+const { getEctorFileContent, setEctorFileContent, removeEctorFile } = require('./utils');
 
 /**
  * Main function of the Command Line Interface
@@ -49,6 +49,9 @@ const cli = function cli(cwd) {
                 console.log(reply);
             },
         )
+        .command('reset', 'reset ECTOR', () => {}, () => {
+            removeEctorFile();
+        })
         .command(
             'save [file]',
             'save ECTOR state',
