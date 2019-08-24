@@ -145,6 +145,13 @@ describe('@ector/core', () => {
             expect(ECTOR.generateResponse(ector)).toHaveProperty('response', 'Hello.');
             expect(ECTOR.generateResponse(ector)).toHaveProperty('responseLabels', ['wHello.']);
         });
+
+        it('should not crash when long response is generated', () => {
+            /** @type ECTOR.ECTOR */
+            let ector = ECTOR.addEntry({}, "This should lead to a long response");
+            ector = ECTOR.generateResponse(ector);
+            expect(ECTOR.getResponse(ector)).toBe('This should lead to a long response');
+        });
     });
 
     describe('link nodes to last sentence', () => {
