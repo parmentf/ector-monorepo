@@ -1,6 +1,6 @@
 'use strict';
 
-// const ECTOR = require('@ector/core');
+const ECTOR = require('@ector/core');
 const yargs = require('yargs/yargs');
 const { getEctorFileContent, setEctorFileContent } = require('./utils');
 
@@ -9,7 +9,8 @@ const { getEctorFileContent, setEctorFileContent } = require('./utils');
  * @param {string} cwd  The current working directory path
  */
 const cli = function cli(cwd) {
-    const ector = getEctorFileContent();
+    /** @type ECTOR.ECTOR */
+    let ector = getEctorFileContent();
     return yargs()
         .pkgConf('', cwd)
         .scriptName('ector')
@@ -40,7 +41,12 @@ const cli = function cli(cwd) {
             'make ECTOR reply',
             () => {},
             ({ entry }) => {
-                console.log('Entry:', entry.join(' '));
+                const strEntry = entry.join(' ');
+                ector = ECTOR.addEntry(ector, strEntry);
+                ector = ECTOR.generateResponse(ector);
+                const reply = ECTOR.getResponse(ector);
+                setEctorFileContent(ector);
+                console.log(reply);
             },
         )
         .command(
