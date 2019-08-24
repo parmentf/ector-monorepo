@@ -23,4 +23,10 @@ describe('@ector/cli ector', () => {
         })
     );
   });
+
+  describe('setuser', () => {});
+  describe('setbot', () => {});
+  describe('reply', () => {});
+  describe('learn', () => {});
+  describe('about', () => {});
 });
