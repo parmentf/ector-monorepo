@@ -16,10 +16,10 @@ const cli = function cli(cwd) {
         .alias('V', '--version')
         .help()
         .command('setuser <username>', 'set username', () => {}, ({ username }) => {
-            console.log('New username:', username);
+            console.log(`New username: "${username}"`);
         })
         .command('setbot <botname>', 'set botname', () => {}, ({ botname }) => {
-            console.log('New botname:', botname);
+            console.log(`New botname: "${botname}"`);
         })
         .command('reply [entry..]', 'make ECTOR reply', () => {}, ({ entry }) => {
             console.log('Entry:', entry.join(' '));
