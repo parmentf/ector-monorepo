@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/parmentf/ector-monorepo/compare/@ector/core@1.0.1...@ector/core@1.0.2) (2019-08-24)
+
+
+### Bug Fixes
+
+* **core:** Use waited structure in generate functions ([1a68395](https://github.com/parmentf/ector-monorepo/commit/1a68395)), closes [#8](https://github.com/parmentf/ector-monorepo/issues/8)
+
+
+
+
+
 ## [1.0.1](https://github.com/parmentf/ector-monorepo/compare/@ector/core@1.0.0...@ector/core@1.0.1) (2019-08-23)
 
 **Note:** Version bump only for package @ector/core

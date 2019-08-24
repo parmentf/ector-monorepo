@@ -1,6 +1,6 @@
 {
   "name": "@ector/core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Functions to generate response from previous sentences of the user",
   "keywords": [
     "chatterbot",
