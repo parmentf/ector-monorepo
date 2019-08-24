@@ -133,7 +133,9 @@ function choseToken(state, temperature) {
 function generateForwards(cn, cns, phraseNodes, temperature) {
     const outgoingLinks = getLinksFrom(cn, phraseNodes[phraseNodes.length -1].id)
 
-    /** @type Array<{ id: string, weight: number }> */
+    /**
+     * @ignore
+     * @type Array<{ id: string, weight: number }> */
     const nextNodes = outgoingLinks.reduce((nodes, link) => {
         const toNode = cn.node[link.to];
         // When toNode is a word token
@@ -179,7 +181,9 @@ function generateForwards(cn, cns, phraseNodes, temperature) {
  **/
 function generateBackwards(cn, cns, phraseNodes, temperature) {
     const incomingLinks = getLinksTo(cn, phraseNodes[0].id)
-    /** @type Array<{ id: string, weight: number }> */
+    /**
+     * @ignore
+     * @type Array<{ id: string, weight: number }> */
     const previousNodes = incomingLinks.reduce((nodes, link) => {
         const fromNode = cn.node[link.from];
         // When fromNode is a word token
