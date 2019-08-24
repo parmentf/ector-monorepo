@@ -1,16 +1,8 @@
 'use strict';
 
-import { promisify } from 'util';
-import fs from 'fs';
 import tester from 'cli-tester';
-import cli from '../lib/cli';
 const { version } = require(`${__dirname}/../package.json`);
-
-const getEctorFileContent = async () => {
-    const readFile = promisify(fs.readFile);
-    const str = await readFile(`${__dirname}/ector.json`, { encoding: 'utf8' });
-    return JSON.parse(str);
-};
+import { getEctorFileContent } from '../lib/utils';
 
 describe('@ector/cli ector', () => {
     describe('version', () => {
@@ -46,7 +38,18 @@ describe('@ector/cli ector', () => {
             ));
     });
 
-    describe('setbot', () => {});
+    describe('setbot', () => {
+        it('should create a file with the botname', () =>
+            tester(require.resolve('../bin/cli'), 'setbot', 'Botname').then(
+                async ({ code, stdout, stderr }) => {
+                    expect(code).toBe(0);
+                    expect(stdout).toBe('New botname: "Botname"');
+                    expect(stderr).toBe('');
+                    const { name } = await getEctorFileContent();
+                    expect(name).toBe('Botname');
+                },
+            ));
+    });
     describe('reply', () => {});
     describe('learn', () => {});
     describe('about', () => {});
