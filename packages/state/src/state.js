@@ -34,12 +34,12 @@ export function activate(cns, label) {
  * @export
  * @param {ConceptNetworkState} cns
  * @param {string}              label
- * @returns {number|undefined}
+ * @returns {number}
  */
 export function getActivationValue(cns, label) {
-    if (!(label in cns)) return undefined;
+    if (!(label in cns)) return 0;
     const state = cns[label];
-    if (!('value' in state)) return undefined;
+    if (!('value' in state)) return 0;
     return state.value;
 }
 

@@ -52,14 +52,14 @@ describe('@ector/state', () => {
                 expect(CNS.getActivationValue(cns, 'a')).toEqual(100);
             });
 
-            it('should get undefined for a non-existing node', () => {
+            it('should get 0 for a non-existing node', () => {
                 const cns = { a: { value: 0 }};
-                expect(CNS.getActivationValue(cns, 'b')).toEqual(undefined);
+                expect(CNS.getActivationValue(cns, 'b')).toEqual(0);
             });
 
-            it('should get undefined for a non-existing activation value', () => {
+            it('should get 0 for a non-existing activation value', () => {
                 const cns = { a: { old: 2 } };
-                expect(CNS.getActivationValue(cns, 'a')).toEqual(undefined);
+                expect(CNS.getActivationValue(cns, 'a')).toEqual(0);
             });
         });
 
