@@ -104,7 +104,7 @@ export function addEntry(ector, entry) {
  *
  * @param {ConceptNetworkState} state
  * @param {number}              temperature
- * @returns {string}    The chosen token
+ * @returns {string|null}    The chosen token
  */
 function choseToken(state, temperature) {
     // Warning:  there is a getMaxActivationValue function in @ector/state
