@@ -3,6 +3,7 @@
 import tester from 'cli-tester';
 const { version } = require(`${__dirname}/../package.json`);
 import { getEctorFileContent } from '../lib/utils';
+import { execSync } from 'child_process';
 
 describe('@ector/cli ector', () => {
     describe('version', () => {
@@ -90,7 +91,25 @@ describe('@ector/cli ector', () => {
             ));
     });
 
-    describe('learn', () => {});
+    // This test should be placed right after reset tests
+    describe('learn', () => {
+        it('should add nodes in concept network', () => {
+            const strCommand =
+                require.resolve('../bin/cli') +
+                ' learn < ' +
+                __dirname +
+                '/toLearn.txt';
+            const result = execSync(strCommand, {
+                input: 'To learn.',
+                encoding: 'utf8',
+            });
+            expect(result).toBe('Learned.');
+            const fileContent = getEctorFileContent();
+            expect(fileContent).toHaveProperty('cn');
+            expect(fileContent.cn).toHaveProperty('node');
+            expect(fileContent.cn.node.length).toBeGreaterThan(0);
+        });
+    });
     describe('about', () => {});
     describe('chat', () => {});
 });

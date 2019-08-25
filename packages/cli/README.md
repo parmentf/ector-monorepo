@@ -100,3 +100,20 @@ How do you do?
 
 Remove `./ector.json` file, resetting all ECTOR's state (its name, your name,
 what you said, it's remindings of what you last said, ...).
+
+### learn
+
+Learn what you give to ECTOR through its standard input (using the redirection
+or pipe).
+
+```bash
+$ ector learn < book.txt
+Learned.
+```
+
+Or (to learn Time machine from H.G.Wells):
+
+```bash
+$ curl https://www.gutenberg.org/files/35/35-0.txt | ector learn
+Learned.
+```

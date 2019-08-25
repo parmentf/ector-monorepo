@@ -2,7 +2,11 @@
 
 const ECTOR = require('@ector/core');
 const yargs = require('yargs/yargs');
-const { getEctorFileContent, setEctorFileContent, removeEctorFile } = require('./utils');
+const {
+    getEctorFileContent,
+    setEctorFileContent,
+    removeEctorFile,
+} = require('./utils');
 
 /**
  * Main function of the Command Line Interface
@@ -49,35 +53,43 @@ const cli = function cli(cwd) {
                 console.log(reply);
             },
         )
-        .command('reset', 'reset ECTOR', () => {}, () => {
-            removeEctorFile();
-        })
-        // .command(
-        //     'save [file]',
-        //     'save ECTOR state',
-        //     yargs => {
-        //         yargs.positional('file', {
-        //             describe: 'file name',
-        //             default: './ector.json',
-        //         });
-        //     },
-        //     ({ file }) => {
-        //         console.log('File:', file);
-        //     },
-        // )
-        // .command(
-        //     'load [file]',
-        //     'load ECTOR from a file',
-        //     yargs => {
-        //         yargs.positional('file', {
-        //             describe: 'file name',
-        //             default: './ector.json',
-        //         });
-        //     },
-        //     ({ file }) => {
-        //         console.log('Load from', file);
-        //     },
-        // );
+        .command(
+            'reset',
+            'reset ECTOR',
+            () => {},
+            () => {
+                removeEctorFile();
+            },
+        )
+        .command(
+            'learn',
+            'learn from standard input',
+            () => {},
+            () => {
+                process.stdin.setEncoding('utf8');
+
+                let data = '';
+                process.stdin.on('readable', () => {
+                    /** @type {string} */
+                    let chunk;
+                    // Use a loop to make sure we read all available data.
+                    while ((chunk = /** @type {string} */(process.stdin.read())) !== null) {
+                        chunk = chunk
+                            .replace(/\r\n/g, ' ')
+                            .replace(/\n/g, ' ')
+                            .replace(/  /g, '. ');
+                        data += chunk;
+                    }
+                });
+
+                process.stdin.on('end', () => {
+                    ector = ECTOR.addEntry(ector, data);
+                    ector = { ...ector, cns: {} };
+                    setEctorFileContent(ector);
+                    process.stdout.write('Learned.');
+                });
+            },
+        );
 };
 
 module.exports = cli;
