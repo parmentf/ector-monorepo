@@ -52,32 +52,32 @@ const cli = function cli(cwd) {
         .command('reset', 'reset ECTOR', () => {}, () => {
             removeEctorFile();
         })
-        .command(
-            'save [file]',
-            'save ECTOR state',
-            yargs => {
-                yargs.positional('file', {
-                    describe: 'file name',
-                    default: './ector.json',
-                });
-            },
-            ({ file }) => {
-                console.log('File:', file);
-            },
-        )
-        .command(
-            'load [file]',
-            'load ECTOR from a file',
-            yargs => {
-                yargs.positional('file', {
-                    describe: 'file name',
-                    default: './ector.json',
-                });
-            },
-            ({ file }) => {
-                console.log('Load from', file);
-            },
-        );
+        // .command(
+        //     'save [file]',
+        //     'save ECTOR state',
+        //     yargs => {
+        //         yargs.positional('file', {
+        //             describe: 'file name',
+        //             default: './ector.json',
+        //         });
+        //     },
+        //     ({ file }) => {
+        //         console.log('File:', file);
+        //     },
+        // )
+        // .command(
+        //     'load [file]',
+        //     'load ECTOR from a file',
+        //     yargs => {
+        //         yargs.positional('file', {
+        //             describe: 'file name',
+        //             default: './ector.json',
+        //         });
+        //     },
+        //     ({ file }) => {
+        //         console.log('Load from', file);
+        //     },
+        // );
 };
 
 module.exports = cli;
