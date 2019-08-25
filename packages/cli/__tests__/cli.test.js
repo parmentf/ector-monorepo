@@ -92,4 +92,5 @@ describe('@ector/cli ector', () => {
 
     describe('learn', () => {});
     describe('about', () => {});
+    describe('chat', () => {});
 });
