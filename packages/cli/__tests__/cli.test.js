@@ -160,5 +160,16 @@ describe('@ector/cli ector', () => {
                 expect(stdout).toBe('Loaded new ECTOR');
                 expect(stderr).toBe('');
             }));
+
+        it('should not load an unexisting JSON', () =>
+            tester(
+                require.resolve('../bin/cli'),
+                'use',
+                './foo.json',
+            ).then(({ code, stdout, stderr }) => {
+                expect(code).toBe(0);
+                expect(stdout).toBe('');
+                expect(stderr).toBe('./foo.json not found.');
+            }));
     });
 });
