@@ -2,8 +2,24 @@
 
 import rwc from 'random-weighted-choice';
 import Tokenizer from 'sentence-tokenizer';
-import { ConceptNetwork, addLink, addNode, incrementBeginning, incrementEnd, incrementMiddle, getLinksFrom, getLinksTo, getNodeIndex } from '@ector/concept-network';
-import { ConceptNetworkState, activate, propagate, getActivationValue } from '@ector/state';
+import {
+    ConceptNetwork,
+    addLink,
+    addNode,
+    incrementBeginning,
+    incrementEnd,
+    incrementMiddle,
+    getLinksFrom,
+    getLinksTo,
+    getNodeIndex,
+} from '@ector/concept-network';
+import {
+    ConceptNetworkState,
+    activate,
+    propagate,
+    getActivationValue,
+    getActivatedTypedNodes,
+} from '@ector/state';
 
 /**
  * @typedef {Object<string, any>} ECTOR
@@ -77,7 +93,10 @@ export function addEntry(ector, entry) {
                         cn = addLink(cn, prevTokenLabel, tokenLabel);
                     }
                     prevTokenLabel = tokenLabel;
-                    return { tokenLabels: [...tokenLabels, tokenLabel], prevTokenLabel };
+                    return {
+                        tokenLabels: [...tokenLabels, tokenLabel],
+                        prevTokenLabel,
+                    };
                 },
                 { tokenLabels: [], prevTokenLabel: null },
             );
@@ -115,23 +134,29 @@ function choseToken(state, temperature) {
     const tokens = Object.keys(state)
         .filter(label => label.startsWith('w'))
         .filter(label => state[label].value >= maxActivationValue - 10);
-    const toChoose = tokens.map(label => ({ weight: state[label].value, id: label }));
+    const toChoose = tokens.map(label => ({
+        weight: state[label].value,
+        id: label,
+    }));
     const chosenNode = rwc(toChoose, temperature);
     return chosenNode;
 }
 
 /**
-   * Generate the end of a sentence, adding tokens to the list of token
-   * nodes in phrase.
-   *
-   * @param {ConceptNetwork}        cn          Network of tokens
-   * @param {ConceptNetworkState}   cns         State of the network (activation values)
-   * @param {{ id: string, weight: number }[]}  phraseNodes array of token nodes
-   * @param {number}                temperature
-   * @returns {{ id: string, weight: number }[]} array of token nodes (end of phrase)
-   **/
+ * Generate the end of a sentence, adding tokens to the list of token
+ * nodes in phrase.
+ *
+ * @param {ConceptNetwork}        cn          Network of tokens
+ * @param {ConceptNetworkState}   cns         State of the network (activation values)
+ * @param {{ id: string, weight: number }[]}  phraseNodes array of token nodes
+ * @param {number}                temperature
+ * @returns {{ id: string, weight: number }[]} array of token nodes (end of phrase)
+ **/
 function generateForwards(cn, cns, phraseNodes, temperature) {
-    const outgoingLinks = getLinksFrom(cn, phraseNodes[phraseNodes.length -1].id)
+    const outgoingLinks = getLinksFrom(
+        cn,
+        phraseNodes[phraseNodes.length - 1].id,
+    );
 
     /**
      * @ignore
@@ -140,24 +165,31 @@ function generateForwards(cn, cns, phraseNodes, temperature) {
         const toNode = cn.node[link.to];
         // When toNode is a word token
         if (toNode.label.startsWith('w')) {
-            const activationValue = Math.max(getActivationValue(cns, toNode.label), 1);
-            const repeatNb = phraseNodes.filter( ({ id }) => id === toNode.label).length;
+            const activationValue = Math.max(
+                getActivationValue(cns, toNode.label),
+                1,
+            );
+            const repeatNb = phraseNodes.filter(({ id }) => id === toNode.label)
+                .length;
             const len = toNode.label.length;
             // If the node is not present more than ~3 times
             if (repeatNb * len <= 5 * 3) {
                 const repetition = 1 + repeatNb * repeatNb * len;
-                return [...nodes, {
-                    id: toNode.label,
-                    weight: link.coOcc * activationValue / repetition
-                }];
+                return [
+                    ...nodes,
+                    {
+                        id: toNode.label,
+                        weight: (link.coOcc * activationValue) / repetition,
+                    },
+                ];
             }
         }
         return [...nodes];
-    }, [])
+    }, []);
 
     // Stop condition
     if (nextNodes.length === 0) {
-      return phraseNodes;
+        return phraseNodes;
     }
     // Choose one node among the tokens following the one at the end of the
     // phrase
@@ -166,21 +198,26 @@ function generateForwards(cn, cns, phraseNodes, temperature) {
     const chosenTokenNode = { id: cn.node[chosenItemIndex].label, weight: -1 };
 
     // Recursively generate the remaining of the phrase
-    return generateForwards(cn, cns, [...phraseNodes, chosenTokenNode], temperature);
+    return generateForwards(
+        cn,
+        cns,
+        [...phraseNodes, chosenTokenNode],
+        temperature,
+    );
 }
 
 /**
  * Generate the begining of a sentence, adding tokens to the list of token
  * nodes in phrase.
  *
-   * @param {ConceptNetwork}        cn          Network of tokens
-   * @param {ConceptNetworkState}   cns         State of the network (activation values)
-   * @param {{ id: string, weight: number }[]}  phraseNodes array of token nodes
-   * @param {number}                temperature
-   * @returns {{ id: string, weight: number }[]} array of token nodes (end of phrase)
+ * @param {ConceptNetwork}        cn          Network of tokens
+ * @param {ConceptNetworkState}   cns         State of the network (activation values)
+ * @param {{ id: string, weight: number }[]}  phraseNodes array of token nodes
+ * @param {number}                temperature
+ * @returns {{ id: string, weight: number }[]} array of token nodes (end of phrase)
  **/
 function generateBackwards(cn, cns, phraseNodes, temperature) {
-    const incomingLinks = getLinksTo(cn, phraseNodes[0].id)
+    const incomingLinks = getLinksTo(cn, phraseNodes[0].id);
     /**
      * @ignore
      * @type Array<{ id: string, weight: number }> */
@@ -188,16 +225,24 @@ function generateBackwards(cn, cns, phraseNodes, temperature) {
         const fromNode = cn.node[link.from];
         // When fromNode is a word token
         if (fromNode.label.startsWith('w')) {
-            const activationValue = Math.max(getActivationValue(cns, fromNode.label), 1);
-            const repeatNb = phraseNodes.filter( ({ id }) => id === fromNode.label).length;
+            const activationValue = Math.max(
+                getActivationValue(cns, fromNode.label),
+                1,
+            );
+            const repeatNb = phraseNodes.filter(
+                ({ id }) => id === fromNode.label,
+            ).length;
             const len = fromNode.label.length;
             // If the node is not present more than ~3 times
             if (repeatNb * len <= 5 * 3) {
                 const repetition = 1 + repeatNb * repeatNb * len;
-                return [...nodes, {
-                    id: fromNode.label,
-                    weight: link.coOcc * activationValue / repetition
-                }];
+                return [
+                    ...nodes,
+                    {
+                        id: fromNode.label,
+                        weight: (link.coOcc * activationValue) / repetition,
+                    },
+                ];
             }
         }
         return [...nodes];
@@ -205,7 +250,7 @@ function generateBackwards(cn, cns, phraseNodes, temperature) {
 
     // Stop condition
     if (previousNodes.length === 0) {
-      return phraseNodes;
+        return phraseNodes;
     }
     // Choose one node among the tokens following the one at the end of the
     // phrase
@@ -214,7 +259,12 @@ function generateBackwards(cn, cns, phraseNodes, temperature) {
     const chosenTokenNode = { id: cn.node[chosenItemIndex].label, weight: -1 };
 
     // Recursively generate the remaining of the phrase
-    return generateBackwards(cn, cns, [chosenTokenNode, ...phraseNodes], temperature);
+    return generateBackwards(
+        cn,
+        cns,
+        [chosenTokenNode, ...phraseNodes],
+        temperature,
+    );
 }
 
 /**
@@ -248,7 +298,7 @@ export function generateResponse(ector) {
         ...ector,
         cns,
         response,
-        responseLabels: responseItems.map(({ id }) => id)
+        responseLabels: responseItems.map(({ id }) => id),
     });
 }
 
@@ -266,8 +316,8 @@ export function linkNodesToLastSentence(ector, nodeLabels = []) {
     const cn = nodeLabels.reduce((cn, nodeLabel) => {
         // QUESTION: is it the right direction(?)
         return addLink(cn, nodeLabel, ector.lastSentenceLabel);
-    }, ector.cn)
-    return Object.freeze({ ...ector, cn })
+    }, ector.cn);
+    return Object.freeze({ ...ector, cn });
 }
 
 /**
@@ -278,4 +328,34 @@ export function linkNodesToLastSentence(ector, nodeLabels = []) {
  */
 export function getResponse(ector) {
     return ector.response || '';
+}
+
+/**
+ * Activates the  nodes of the entry in @about state and returns ECTOR and the
+ * array of activated nodes.
+ *
+ * @param {ECTOR} ector
+ * @param {string} entry
+ * returns {ECTOR}
+ */
+export function about(ector, entry) {
+    const tokenizer = new Tokenizer('@about', 'ECTOR');
+    tokenizer.setEntry(entry);
+    const sentences = tokenizer.getSentences();
+    const tokens = tokenizer.getTokens(0);
+
+    let state = sentences.reduce((cns, sentence) => {
+        return activate(cns, `s${sentence}`);
+    }, {});
+    state = tokens.reduce((cns, token) => {
+        return activate(cns, `w${token}`);
+    }, state);
+    state = propagate(ector.cn, state);
+    state = propagate(ector.cn, state);
+    const newEctor = {
+        ...ector,
+        username: '@about',
+        cns: { ...ector.cns, '@about': state },
+    };
+    return newEctor;
 }
