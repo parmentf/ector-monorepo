@@ -11,6 +11,18 @@ const samples = require('@ector/samples');
 console.log(Object.keys(samples));
 ```
 
+Otherwise, you can just install it, and use it with [@ector/cli](../cli):
+
+```bash
+npm i @ector/samples
+npx @ector/cli use en-bot
+```
+
+## Samples
+
+- `en-bot`: few sentences about ECTOR and chatterbots, in English
+- `fr-bot`: few sentences about ECTOR and chatterbots, in French
+
 ## Contribution
 
 Simply write a text, save it into a file, place it in
@@ -27,3 +39,5 @@ cp ector.json packages/samples/lib/ector.{lang}-{subject}.json
 ```
 
 Don't forget to declare it in the `packages/samples/lib/samples.js` file.
+
+Ultimately, add the name and the description of the file to this `README.md`.
