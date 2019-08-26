@@ -17,6 +17,7 @@ Commandes:
   ector reset               reset ECTOR
   ector learn               learn from standard input
   ector chat                have a chat with ECTOR
+  ector use <file>          load another ECTOR file
 
 $ ector reply "Hello ECTOR, how do you do?"
 Hello Guy, how do you do?
@@ -58,6 +59,14 @@ It learns from what you say to him (using `ector reply` or `ector learn`).
 To see all implemented commands, use `ector --help` or `ector -h`.
 
 To know ector's version, use `ector --version` or `ector -V`.
+
+- [setuser](#setuser)
+- [setbot](#setbot)
+- [reply](#reply)
+- [reset](#reset)
+- [learn](#learn)
+- [chat](#chat)
+- [use](#use)
 
 ### setuser
 
