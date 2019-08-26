@@ -2,6 +2,8 @@
 
 A package of different ECTOR's backups.
 
+Because @ector/cli does not come with any knowledge.
+
 ## Usage
 
 ```js
