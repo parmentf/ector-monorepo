@@ -15,6 +15,8 @@ Commandes:
   ector setbot <botname>    set botname
   ector reply [entry..]     make ECTOR reply
   ector reset               reset ECTOR
+  ector learn               learn from standard input
+  ector chat                have a chat with ECTOR
 
 $ ector reply "Hello ECTOR, how do you do?"
 Hello Guy, how do you do?
@@ -116,4 +118,22 @@ Or (to learn Time machine from H.G.Wells):
 ```bash
 $ curl https://www.gutenberg.org/files/35/35-0.txt | ector learn
 Learned.
+```
+
+## chat
+
+Have a chat with ECTOR, avoiding several `ector entry` commands.
+
+On Linux, use `Ctrl-D` to quit.
+It closes the standard input.
+
+```bash
+$ node packages/cli/bin/cli chat
+> Hello ECTOR, how do you do?
+Hello Guy, how do you do?
+> I'm glad to meet you.
+I'm glad to make this file searchable.
+> I did not expect you to use those words.
+I did not expect you to make this file searchable.
+>
 ```

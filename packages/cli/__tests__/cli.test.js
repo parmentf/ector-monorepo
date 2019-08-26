@@ -132,5 +132,18 @@ describe('@ector/cli ector', () => {
             ));
     });
 
-    describe('chat', () => {});
+    describe('chat', () => {
+        it('should answer and save', () => {
+            const strCommand =
+                require.resolve('../bin/cli') +
+                ' chat';
+            const result = execSync(strCommand, {
+                input: 'How do you do?',
+                encoding: 'utf8',
+            });
+            expect(result).toBe('How do you do?\n> ');
+            const { response } = getEctorFileContent();
+            expect(response).toBe('How do you do?');
+        });
+    });
 });

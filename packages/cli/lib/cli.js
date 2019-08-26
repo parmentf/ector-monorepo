@@ -2,6 +2,7 @@
 
 const ECTOR = require('@ector/core');
 const yargs = require('yargs/yargs');
+const readline = require('readline');
 const {
     getEctorFileContent,
     setEctorFileContent,
@@ -106,6 +107,25 @@ const cli = function cli(cwd) {
                 }
                 console.log(res.map(s => s.slice(1)));
             },
+        )
+        .command(
+            'chat',
+            'have a chat with ECTOR',
+            () => {},
+            () => {
+                const rl = readline.createInterface(process.stdin, process.stdout);
+
+                rl.on('line', (entry) => {
+                    ector = ECTOR.addEntry(ector, entry);
+                    ector = ECTOR.generateResponse(ector);
+                    console.log(ECTOR.getResponse(ector));
+                    rl.prompt();
+                })
+                .on('close', () => {
+                    setEctorFileContent(ector, cwd);
+                    process.exit(0);
+                });
+            }
         );
 };
 
