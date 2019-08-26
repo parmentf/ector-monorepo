@@ -10,7 +10,7 @@ A bunch of ECTOR node packages
 - [x] [concept-network](./packages/concept-network)
 - [x] [state](./packages/state)
 - [x] [core](./packages/core)
-- [ ] [cli](./packages/cli)
+- [x] [cli](./packages/cli)
 - [ ] backend
 - [ ] browser (or svelte)
 - [ ] hubot
