@@ -40,10 +40,8 @@ Hello Guy!
     -   [Parameters](#parameters-1)
 -   [generateForwards](#generateforwards)
     -   [Parameters](#parameters-2)
--   [nextNodes](#nextnodes)
 -   [generateBackwards](#generatebackwards)
     -   [Parameters](#parameters-3)
--   [previousNodes](#previousnodes)
 -   [generateResponse](#generateresponse)
     -   [Parameters](#parameters-4)
 -   [linkNodesToLastSentence](#linknodestolastsentence)
@@ -104,8 +102,6 @@ nodes in phrase.
 Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;{id: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), weight: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}>** array of token nodes (end of phrase)
 \*
 
-### nextNodes
-
 ### generateBackwards
 
 Generate the begining of a sentence, adding tokens to the list of token
@@ -120,8 +116,6 @@ nodes in phrase.
 
 Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;{id: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), weight: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}>** array of token nodes (end of phrase)
 \*
-
-### previousNodes
 
 ### generateResponse
 

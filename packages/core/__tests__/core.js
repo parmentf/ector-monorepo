@@ -198,4 +198,26 @@ describe('@ector/core', () => {
             expect(ECTOR.getResponse(ector)).toBe('');
         });
     });
+
+    describe('about', () => {
+        /** @type ECTOR.ECTOR */
+        let ector;
+        beforeEach(() => {
+            ector = ECTOR.addEntry({}, "i don't know what to add");
+            ector = ECTOR.addEntry(ector, 'this is more of an experiment');
+            ector = ECTOR.addEntry(ector, 'let us see what it yields');
+        });
+
+        it('should activate entry nodes in @about cns', () => {
+            ector  = ECTOR.about(ector, 'see');
+            expect(ector.cns['@about']).toBeDefined();
+            expect(ector.cns['@about']['wsee'].value).toBeGreaterThan(0);
+        });
+
+        it('should return most activated nodes', () => {
+            ector = ECTOR.about(ector, 'experiment');
+            expect(Object.keys(ector.cns['@about'])).toHaveLength(1);
+            expect(Object.keys(ector.cns['@about'])).toStrictEqual(['wexperiment']);
+        });
+    });
 });

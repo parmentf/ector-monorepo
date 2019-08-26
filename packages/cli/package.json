@@ -1,23 +1,27 @@
 {
-  "name": "@ector/core",
-  "version": "1.0.2",
-  "description": "Functions to generate response from previous sentences of the user",
+  "name": "@ector/cli",
+  "version": "0.0.0",
+  "description": "Interactive command line interface to ECTOR, the learning chatterbot",
   "keywords": [
-    "chatterbot",
     "bot",
-    "chat",
-    "learning"
+    "chatterbot",
+    "learning",
+    "command"
   ],
   "author": "François Parmentier <francois.parmentier@gmail.com>",
   "homepage": "https://github.com/parmentf/ector-monorepo#readme",
   "license": "MIT",
-  "main": "dist/core.js",
+  "main": "lib/cli.js",
+  "bin": {
+    "ector": "bin/cli"
+  },
   "directories": {
-    "lib": "dist",
+    "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "dist"
+    "bin",
+    "lib"
   ],
   "publishConfig": {
     "access": "public"
@@ -27,18 +31,13 @@
     "url": "git+https://github.com/parmentf/ector-monorepo.git"
   },
   "scripts": {
-    "build": "babel --root-mode upward src --out-dir dist",
-    "doc": "documentation readme src/** -f md --section=Functions",
-    "prepublish": "npm run build",
     "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "dependencies": {
+    "@ector/core": "1.0.2",
+    "yargs": "14.0.0"
   },
   "bugs": {
     "url": "https://github.com/parmentf/ector-monorepo/issues"
-  },
-  "dependencies": {
-    "@ector/concept-network": "1.1.0",
-    "@ector/state": "1.0.2",
-    "random-weighted-choice": "0.1.3",
-    "sentence-tokenizer": "1.0.1"
   }
 }
