@@ -3,6 +3,7 @@
 const ECTOR = require('@ector/core');
 const yargs = require('yargs/yargs');
 const readline = require('readline');
+const fs = require('fs');
 const {
     getEctorFileContent,
     setEctorFileContent,
@@ -113,19 +114,51 @@ const cli = function cli(cwd) {
             'have a chat with ECTOR',
             () => {},
             () => {
-                const rl = readline.createInterface(process.stdin, process.stdout);
+                const rl = readline.createInterface(
+                    process.stdin,
+                    process.stdout,
+                );
 
-                rl.on('line', (entry) => {
+                rl.on('line', entry => {
                     ector = ECTOR.addEntry(ector, entry);
                     ector = ECTOR.generateResponse(ector);
                     console.log(ECTOR.getResponse(ector));
                     rl.prompt();
-                })
-                .on('close', () => {
+                }).on('close', () => {
                     setEctorFileContent(ector, cwd);
                     process.exit(0);
                 });
-            }
+            },
+        )
+        .command(
+            'use <file>',
+            'load another ECTOR file',
+            () => {},
+            ({ file }) => {
+                const isExisting = fs.existsSync(file);
+                if (isExisting) {
+                    removeEctorFile(cwd);
+                    fs.copyFileSync(file, `${cwd}/ector.json`);
+                    const { name } = getEctorFileContent(cwd);
+                    console.log(`Loaded new ${name}`);
+                } else {
+                    let samples;
+                    try {
+                        samples = require('@ector/samples');
+                    } catch(e) {
+                        console.error(`${file} not found.`);
+                        return;
+                    }
+                    if (!samples[file]) {
+                        console.error(`${file} not found.`);
+                        return;
+                    }
+                    removeEctorFile(cwd);
+                    fs.copyFileSync(samples[file].path, `${cwd}/ector.json`);
+                    const { name } = getEctorFileContent(cwd);
+                    console.log(`Loaded new ${file}`);
+                }
+            },
         );
 };
 

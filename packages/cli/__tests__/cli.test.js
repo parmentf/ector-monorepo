@@ -2,7 +2,7 @@
 
 import tester from 'cli-tester';
 const { version } = require(`${__dirname}/../package.json`);
-import { getEctorFileContent } from '../lib/utils';
+import { getEctorFileContent, removeEctorFile } from '../lib/utils';
 import { execSync } from 'child_process';
 
 describe('@ector/cli ector', () => {
@@ -134,9 +134,7 @@ describe('@ector/cli ector', () => {
 
     describe('chat', () => {
         it('should answer and save', () => {
-            const strCommand =
-                require.resolve('../bin/cli') +
-                ' chat';
+            const strCommand = require.resolve('../bin/cli') + ' chat';
             const result = execSync(strCommand, {
                 input: 'How do you do?',
                 encoding: 'utf8',
@@ -145,5 +143,55 @@ describe('@ector/cli ector', () => {
             const { response } = getEctorFileContent();
             expect(response).toBe('How do you do?');
         });
+    });
+
+    describe('use', () => {
+        afterAll(() => {
+            removeEctorFile();
+        });
+
+        it('should load a JSON file', () =>
+            tester(
+                require.resolve('../bin/cli'),
+                'use',
+                require.resolve('../../samples/lib/ector.en-bot.json'),
+            ).then(({ code, stdout, stderr }) => {
+                expect(code).toBe(0);
+                expect(stdout).toBe('Loaded new ECTOR');
+                expect(stderr).toBe('');
+            }));
+
+        it('should not load an unexisting JSON', () =>
+            tester(
+                require.resolve('../bin/cli'),
+                'use',
+                './foo.json',
+            ).then(({ code, stdout, stderr }) => {
+                expect(code).toBe(0);
+                expect(stdout).toBe('');
+                expect(stderr).toBe('./foo.json not found.');
+            }));
+
+        it('should load an @ector/samples file', () =>
+            tester(
+                require.resolve('../bin/cli'),
+                'use',
+                'fr-bot'
+            ).then(({ code, stdout, stderr }) => {
+                expect(code).toBe(0);
+                expect(stdout).toBe('Loaded new fr-bot');
+                expect(stderr).toBe('');
+            }));
+
+        it('should not load an unexisting @ector/samples file', () =>
+            tester(
+                require.resolve('../bin/cli'),
+                'use',
+                'foobar'
+            ).then(({ code, stdout, stderr }) => {
+                expect(code).toBe(0);
+                expect(stdout).toBe('');
+                expect(stderr).toBe('foobar not found.');
+            }));
     });
 });

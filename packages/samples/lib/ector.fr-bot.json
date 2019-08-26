@@ -1,0 +1,2979 @@
+{
+  "username": "François",
+  "name": "ECTOR",
+  "cn": {
+    "node": [
+      {
+        "label": "sJe suis {yourname}, un chatterbot apprenant.",
+        "occ": 1
+      },
+      {
+        "label": "wJe",
+        "occ": 4,
+        "beg": 4
+      },
+      {
+        "label": "wsuis",
+        "occ": 4,
+        "mid": 4
+      },
+      {
+        "label": "w{yourname},",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wun",
+        "occ": 12,
+        "mid": 12
+      },
+      {
+        "label": "wchatterbot",
+        "occ": 3,
+        "mid": 3
+      },
+      {
+        "label": "wapprenant.",
+        "occ": 1,
+        "end": 1
+      },
+      {
+        "label": "sCela signifie que je suis capable d'apprendre à parler à partir de ce que vous me dites.",
+        "occ": 1
+      },
+      {
+        "label": "wCela",
+        "occ": 2,
+        "beg": 2
+      },
+      {
+        "label": "wsignifie",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "wque",
+        "occ": 3,
+        "mid": 3
+      },
+      {
+        "label": "wje",
+        "occ": 3,
+        "mid": 3
+      },
+      {
+        "label": "wcapable",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wd'apprendre",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wà",
+        "occ": 3,
+        "mid": 3
+      },
+      {
+        "label": "wparler",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wpartir",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wde",
+        "occ": 8,
+        "mid": 8
+      },
+      {
+        "label": "wce",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wvous",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wme",
+        "occ": 3,
+        "mid": 3
+      },
+      {
+        "label": "wdites.",
+        "occ": 1,
+        "end": 1
+      },
+      {
+        "label": "sUn chatterbot est un programme conçu pour discuter avec un humain.",
+        "occ": 1
+      },
+      {
+        "label": "wUn",
+        "occ": 1,
+        "beg": 1
+      },
+      {
+        "label": "west",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "wprogramme",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wconçu",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wpour",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "wdiscuter",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wavec",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "whumain.",
+        "occ": 1,
+        "end": 1
+      },
+      {
+        "label": "sBenoît Parmentier avait trouvé une traduction amusante de chatterbot: bot parleur.",
+        "occ": 1
+      },
+      {
+        "label": "wBenoît",
+        "occ": 1,
+        "beg": 1
+      },
+      {
+        "label": "wParmentier",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wavait",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wtrouvé",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wune",
+        "occ": 3,
+        "mid": 3
+      },
+      {
+        "label": "wtraduction",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wamusante",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wchatterbot:",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wbot",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wparleur.",
+        "occ": 1,
+        "end": 1
+      },
+      {
+        "label": "sE C T O R, mon acronyme signifie Entité Cybernétique Totalement Obligée de Répondre.",
+        "occ": 1
+      },
+      {
+        "label": "wE",
+        "occ": 1,
+        "beg": 1
+      },
+      {
+        "label": "wC",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wT",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wO",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wR,",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wmon",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "wacronyme",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wEntité",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wCybernétique",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wTotalement",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wObligée",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wRépondre.",
+        "occ": 1,
+        "end": 1
+      },
+      {
+        "label": "sMon nom est aussi un clin d'œil au nom de mon prédécesseur, Achille.",
+        "occ": 1
+      },
+      {
+        "label": "wMon",
+        "occ": 1,
+        "beg": 1
+      },
+      {
+        "label": "wnom",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "waussi",
+        "occ": 3,
+        "mid": 3
+      },
+      {
+        "label": "wclin",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wd'œil",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wau",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wprédécesseur,",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wAchille.",
+        "occ": 1,
+        "end": 1
+      },
+      {
+        "label": "sDans la mythologie grecque, Achille et Hector se sont affrontés.",
+        "occ": 1
+      },
+      {
+        "label": "wDans",
+        "occ": 1,
+        "beg": 1
+      },
+      {
+        "label": "wla",
+        "occ": 3,
+        "mid": 3
+      },
+      {
+        "label": "wmythologie",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wgrecque,",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wAchille",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "wet",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wHector",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wse",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "wsont",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "waffrontés.",
+        "occ": 1,
+        "end": 1
+      },
+      {
+        "label": "sMais ici, je suis plutôt un successeur, un fils d'Achille.",
+        "occ": 1
+      },
+      {
+        "label": "wMais",
+        "occ": 2,
+        "beg": 2
+      },
+      {
+        "label": "wici,",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wplutôt",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wsuccesseur,",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wfils",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wd'Achille.",
+        "occ": 1,
+        "end": 1
+      },
+      {
+        "label": "sIl était aussi un chatterbot placé sur IRC dans la fin des années 1990.",
+        "occ": 1
+      },
+      {
+        "label": "wIl",
+        "occ": 1,
+        "beg": 1
+      },
+      {
+        "label": "wétait",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "wplacé",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wsur",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wIRC",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wdans",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wfin",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wdes",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "wannées",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "w1990.",
+        "occ": 1,
+        "end": 1
+      },
+      {
+        "label": "sMais Achille était plus simple: une commande permettait de lui enseigner un phrase, qu'il pouvait employer littéralement en réaction à un stimulus.",
+        "occ": 1
+      },
+      {
+        "label": "wplus",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "wsimple:",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wcommande",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wpermettait",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wlui",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wenseigner",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wphrase,",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wqu'il",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wpouvait",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wemployer",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wlittéralement",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wen",
+        "occ": 6,
+        "mid": 6
+      },
+      {
+        "label": "wréaction",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wstimulus.",
+        "occ": 1,
+        "end": 1
+      },
+      {
+        "label": "sJe suis plus sophistiqué: je décompose les phrases qu'on me dit en mots, ou tokens, que j'organise en séquences.",
+        "occ": 1
+      },
+      {
+        "label": "wsophistiqué:",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wdécompose",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wles",
+        "occ": 4,
+        "mid": 4
+      },
+      {
+        "label": "wphrases",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wqu'on",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wdit",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wmots,",
+        "occ": 3,
+        "mid": 3
+      },
+      {
+        "label": "wou",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "wtokens,",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wj'organise",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wséquences.",
+        "occ": 1,
+        "end": 1
+      },
+      {
+        "label": "sJe calcule les probabilités qu'un mot suive un autre.",
+        "occ": 1
+      },
+      {
+        "label": "wcalcule",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wprobabilités",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wqu'un",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "wmot",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "wsuive",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "wautre.",
+        "occ": 2,
+        "end": 2
+      },
+      {
+        "label": "sCela me permet de générer des phrases, mais j'introduis aussi une notion de créativité en utilisant un choix aléatoire.",
+        "occ": 1
+      },
+      {
+        "label": "wpermet",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wgénérer",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wphrases,",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wmais",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wj'introduis",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wnotion",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wcréativité",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wutilisant",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wchoix",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "waléatoire.",
+        "occ": 1,
+        "end": 1
+      },
+      {
+        "label": "sJe choisis parmi les mots, pour faire simple, qui ont été récemment utilisés, ou qui ont été activés par ces derniers.",
+        "occ": 1
+      },
+      {
+        "label": "wchoisis",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wparmi",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wfaire",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wsimple,",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wqui",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "wont",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "wété",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "wrécemment",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wutilisés,",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wactivés",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wpar",
+        "occ": 2,
+        "mid": 2
+      },
+      {
+        "label": "wces",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wderniers.",
+        "occ": 1,
+        "end": 1
+      },
+      {
+        "label": "sL'activation se propage en suivant les séquences de mots, pondérées par la probabilité qu'un mot en suive un autre.",
+        "occ": 1
+      },
+      {
+        "label": "wL'activation",
+        "occ": 1,
+        "beg": 1
+      },
+      {
+        "label": "wpropage",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wsuivant",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wséquences",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wpondérées",
+        "occ": 1,
+        "mid": 1
+      },
+      {
+        "label": "wprobabilité",
+        "occ": 1,
+        "mid": 1
+      }
+    ],
+    "link": [
+      {
+        "from": 0,
+        "to": 1,
+        "coOcc": 1
+      },
+      {
+        "from": 0,
+        "to": 2,
+        "coOcc": 1
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "coOcc": 2
+      },
+      {
+        "from": 0,
+        "to": 3,
+        "coOcc": 1
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "coOcc": 1
+      },
+      {
+        "from": 0,
+        "to": 4,
+        "coOcc": 1
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "coOcc": 1
+      },
+      {
+        "from": 0,
+        "to": 5,
+        "coOcc": 1
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "coOcc": 2
+      },
+      {
+        "from": 0,
+        "to": 6,
+        "coOcc": 1
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "coOcc": 1
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "coOcc": 1
+      },
+      {
+        "from": 7,
+        "to": 9,
+        "coOcc": 1
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "coOcc": 1
+      },
+      {
+        "from": 7,
+        "to": 10,
+        "coOcc": 2
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "coOcc": 1
+      },
+      {
+        "from": 7,
+        "to": 11,
+        "coOcc": 1
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "coOcc": 1
+      },
+      {
+        "from": 7,
+        "to": 2,
+        "coOcc": 1
+      },
+      {
+        "from": 11,
+        "to": 2,
+        "coOcc": 2
+      },
+      {
+        "from": 7,
+        "to": 12,
+        "coOcc": 1
+      },
+      {
+        "from": 2,
+        "to": 12,
+        "coOcc": 1
+      },
+      {
+        "from": 7,
+        "to": 13,
+        "coOcc": 1
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "coOcc": 1
+      },
+      {
+        "from": 7,
+        "to": 14,
+        "coOcc": 2
+      },
+      {
+        "from": 13,
+        "to": 14,
+        "coOcc": 1
+      },
+      {
+        "from": 7,
+        "to": 15,
+        "coOcc": 1
+      },
+      {
+        "from": 14,
+        "to": 15,
+        "coOcc": 1
+      },
+      {
+        "from": 15,
+        "to": 14,
+        "coOcc": 1
+      },
+      {
+        "from": 7,
+        "to": 16,
+        "coOcc": 1
+      },
+      {
+        "from": 14,
+        "to": 16,
+        "coOcc": 1
+      },
+      {
+        "from": 7,
+        "to": 17,
+        "coOcc": 1
+      },
+      {
+        "from": 16,
+        "to": 17,
+        "coOcc": 1
+      },
+      {
+        "from": 7,
+        "to": 18,
+        "coOcc": 1
+      },
+      {
+        "from": 17,
+        "to": 18,
+        "coOcc": 1
+      },
+      {
+        "from": 18,
+        "to": 10,
+        "coOcc": 1
+      },
+      {
+        "from": 7,
+        "to": 19,
+        "coOcc": 1
+      },
+      {
+        "from": 10,
+        "to": 19,
+        "coOcc": 1
+      },
+      {
+        "from": 7,
+        "to": 20,
+        "coOcc": 1
+      },
+      {
+        "from": 19,
+        "to": 20,
+        "coOcc": 1
+      },
+      {
+        "from": 7,
+        "to": 21,
+        "coOcc": 1
+      },
+      {
+        "from": 20,
+        "to": 21,
+        "coOcc": 1
+      },
+      {
+        "from": 22,
+        "to": 23,
+        "coOcc": 1
+      },
+      {
+        "from": 22,
+        "to": 5,
+        "coOcc": 1
+      },
+      {
+        "from": 23,
+        "to": 5,
+        "coOcc": 1
+      },
+      {
+        "from": 22,
+        "to": 24,
+        "coOcc": 1
+      },
+      {
+        "from": 5,
+        "to": 24,
+        "coOcc": 1
+      },
+      {
+        "from": 22,
+        "to": 4,
+        "coOcc": 2
+      },
+      {
+        "from": 24,
+        "to": 4,
+        "coOcc": 1
+      },
+      {
+        "from": 22,
+        "to": 25,
+        "coOcc": 1
+      },
+      {
+        "from": 4,
+        "to": 25,
+        "coOcc": 1
+      },
+      {
+        "from": 22,
+        "to": 26,
+        "coOcc": 1
+      },
+      {
+        "from": 25,
+        "to": 26,
+        "coOcc": 1
+      },
+      {
+        "from": 22,
+        "to": 27,
+        "coOcc": 1
+      },
+      {
+        "from": 26,
+        "to": 27,
+        "coOcc": 1
+      },
+      {
+        "from": 22,
+        "to": 28,
+        "coOcc": 1
+      },
+      {
+        "from": 27,
+        "to": 28,
+        "coOcc": 1
+      },
+      {
+        "from": 22,
+        "to": 29,
+        "coOcc": 1
+      },
+      {
+        "from": 28,
+        "to": 29,
+        "coOcc": 1
+      },
+      {
+        "from": 29,
+        "to": 4,
+        "coOcc": 1
+      },
+      {
+        "from": 22,
+        "to": 30,
+        "coOcc": 1
+      },
+      {
+        "from": 4,
+        "to": 30,
+        "coOcc": 1
+      },
+      {
+        "from": 31,
+        "to": 32,
+        "coOcc": 1
+      },
+      {
+        "from": 31,
+        "to": 33,
+        "coOcc": 1
+      },
+      {
+        "from": 32,
+        "to": 33,
+        "coOcc": 1
+      },
+      {
+        "from": 31,
+        "to": 34,
+        "coOcc": 1
+      },
+      {
+        "from": 33,
+        "to": 34,
+        "coOcc": 1
+      },
+      {
+        "from": 31,
+        "to": 35,
+        "coOcc": 1
+      },
+      {
+        "from": 34,
+        "to": 35,
+        "coOcc": 1
+      },
+      {
+        "from": 31,
+        "to": 36,
+        "coOcc": 1
+      },
+      {
+        "from": 35,
+        "to": 36,
+        "coOcc": 1
+      },
+      {
+        "from": 31,
+        "to": 37,
+        "coOcc": 1
+      },
+      {
+        "from": 36,
+        "to": 37,
+        "coOcc": 1
+      },
+      {
+        "from": 31,
+        "to": 38,
+        "coOcc": 1
+      },
+      {
+        "from": 37,
+        "to": 38,
+        "coOcc": 1
+      },
+      {
+        "from": 31,
+        "to": 17,
+        "coOcc": 1
+      },
+      {
+        "from": 38,
+        "to": 17,
+        "coOcc": 1
+      },
+      {
+        "from": 31,
+        "to": 39,
+        "coOcc": 1
+      },
+      {
+        "from": 17,
+        "to": 39,
+        "coOcc": 1
+      },
+      {
+        "from": 31,
+        "to": 40,
+        "coOcc": 1
+      },
+      {
+        "from": 39,
+        "to": 40,
+        "coOcc": 1
+      },
+      {
+        "from": 31,
+        "to": 41,
+        "coOcc": 1
+      },
+      {
+        "from": 40,
+        "to": 41,
+        "coOcc": 1
+      },
+      {
+        "from": 42,
+        "to": 43,
+        "coOcc": 1
+      },
+      {
+        "from": 42,
+        "to": 44,
+        "coOcc": 1
+      },
+      {
+        "from": 43,
+        "to": 44,
+        "coOcc": 1
+      },
+      {
+        "from": 42,
+        "to": 45,
+        "coOcc": 1
+      },
+      {
+        "from": 44,
+        "to": 45,
+        "coOcc": 1
+      },
+      {
+        "from": 42,
+        "to": 46,
+        "coOcc": 1
+      },
+      {
+        "from": 45,
+        "to": 46,
+        "coOcc": 1
+      },
+      {
+        "from": 42,
+        "to": 47,
+        "coOcc": 1
+      },
+      {
+        "from": 46,
+        "to": 47,
+        "coOcc": 1
+      },
+      {
+        "from": 42,
+        "to": 48,
+        "coOcc": 1
+      },
+      {
+        "from": 47,
+        "to": 48,
+        "coOcc": 1
+      },
+      {
+        "from": 42,
+        "to": 49,
+        "coOcc": 1
+      },
+      {
+        "from": 48,
+        "to": 49,
+        "coOcc": 1
+      },
+      {
+        "from": 42,
+        "to": 9,
+        "coOcc": 1
+      },
+      {
+        "from": 49,
+        "to": 9,
+        "coOcc": 1
+      },
+      {
+        "from": 42,
+        "to": 50,
+        "coOcc": 1
+      },
+      {
+        "from": 9,
+        "to": 50,
+        "coOcc": 1
+      },
+      {
+        "from": 42,
+        "to": 51,
+        "coOcc": 1
+      },
+      {
+        "from": 50,
+        "to": 51,
+        "coOcc": 1
+      },
+      {
+        "from": 42,
+        "to": 52,
+        "coOcc": 1
+      },
+      {
+        "from": 51,
+        "to": 52,
+        "coOcc": 1
+      },
+      {
+        "from": 42,
+        "to": 53,
+        "coOcc": 1
+      },
+      {
+        "from": 52,
+        "to": 53,
+        "coOcc": 1
+      },
+      {
+        "from": 42,
+        "to": 17,
+        "coOcc": 1
+      },
+      {
+        "from": 53,
+        "to": 17,
+        "coOcc": 1
+      },
+      {
+        "from": 42,
+        "to": 54,
+        "coOcc": 1
+      },
+      {
+        "from": 17,
+        "to": 54,
+        "coOcc": 1
+      },
+      {
+        "from": 55,
+        "to": 56,
+        "coOcc": 1
+      },
+      {
+        "from": 55,
+        "to": 57,
+        "coOcc": 2
+      },
+      {
+        "from": 56,
+        "to": 57,
+        "coOcc": 1
+      },
+      {
+        "from": 55,
+        "to": 24,
+        "coOcc": 1
+      },
+      {
+        "from": 57,
+        "to": 24,
+        "coOcc": 1
+      },
+      {
+        "from": 55,
+        "to": 58,
+        "coOcc": 1
+      },
+      {
+        "from": 24,
+        "to": 58,
+        "coOcc": 1
+      },
+      {
+        "from": 55,
+        "to": 4,
+        "coOcc": 1
+      },
+      {
+        "from": 58,
+        "to": 4,
+        "coOcc": 2
+      },
+      {
+        "from": 55,
+        "to": 59,
+        "coOcc": 1
+      },
+      {
+        "from": 4,
+        "to": 59,
+        "coOcc": 1
+      },
+      {
+        "from": 55,
+        "to": 60,
+        "coOcc": 1
+      },
+      {
+        "from": 59,
+        "to": 60,
+        "coOcc": 1
+      },
+      {
+        "from": 55,
+        "to": 61,
+        "coOcc": 1
+      },
+      {
+        "from": 60,
+        "to": 61,
+        "coOcc": 1
+      },
+      {
+        "from": 61,
+        "to": 57,
+        "coOcc": 1
+      },
+      {
+        "from": 55,
+        "to": 17,
+        "coOcc": 1
+      },
+      {
+        "from": 57,
+        "to": 17,
+        "coOcc": 1
+      },
+      {
+        "from": 55,
+        "to": 48,
+        "coOcc": 1
+      },
+      {
+        "from": 17,
+        "to": 48,
+        "coOcc": 1
+      },
+      {
+        "from": 55,
+        "to": 62,
+        "coOcc": 1
+      },
+      {
+        "from": 48,
+        "to": 62,
+        "coOcc": 1
+      },
+      {
+        "from": 55,
+        "to": 63,
+        "coOcc": 1
+      },
+      {
+        "from": 62,
+        "to": 63,
+        "coOcc": 1
+      },
+      {
+        "from": 64,
+        "to": 65,
+        "coOcc": 1
+      },
+      {
+        "from": 64,
+        "to": 66,
+        "coOcc": 1
+      },
+      {
+        "from": 65,
+        "to": 66,
+        "coOcc": 1
+      },
+      {
+        "from": 64,
+        "to": 67,
+        "coOcc": 1
+      },
+      {
+        "from": 66,
+        "to": 67,
+        "coOcc": 1
+      },
+      {
+        "from": 64,
+        "to": 68,
+        "coOcc": 1
+      },
+      {
+        "from": 67,
+        "to": 68,
+        "coOcc": 1
+      },
+      {
+        "from": 64,
+        "to": 69,
+        "coOcc": 1
+      },
+      {
+        "from": 68,
+        "to": 69,
+        "coOcc": 1
+      },
+      {
+        "from": 64,
+        "to": 70,
+        "coOcc": 1
+      },
+      {
+        "from": 69,
+        "to": 70,
+        "coOcc": 1
+      },
+      {
+        "from": 64,
+        "to": 71,
+        "coOcc": 1
+      },
+      {
+        "from": 70,
+        "to": 71,
+        "coOcc": 1
+      },
+      {
+        "from": 64,
+        "to": 72,
+        "coOcc": 1
+      },
+      {
+        "from": 71,
+        "to": 72,
+        "coOcc": 1
+      },
+      {
+        "from": 64,
+        "to": 73,
+        "coOcc": 1
+      },
+      {
+        "from": 72,
+        "to": 73,
+        "coOcc": 1
+      },
+      {
+        "from": 64,
+        "to": 74,
+        "coOcc": 1
+      },
+      {
+        "from": 73,
+        "to": 74,
+        "coOcc": 1
+      },
+      {
+        "from": 75,
+        "to": 76,
+        "coOcc": 1
+      },
+      {
+        "from": 75,
+        "to": 77,
+        "coOcc": 1
+      },
+      {
+        "from": 76,
+        "to": 77,
+        "coOcc": 1
+      },
+      {
+        "from": 75,
+        "to": 11,
+        "coOcc": 1
+      },
+      {
+        "from": 77,
+        "to": 11,
+        "coOcc": 1
+      },
+      {
+        "from": 75,
+        "to": 2,
+        "coOcc": 1
+      },
+      {
+        "from": 75,
+        "to": 78,
+        "coOcc": 1
+      },
+      {
+        "from": 2,
+        "to": 78,
+        "coOcc": 1
+      },
+      {
+        "from": 75,
+        "to": 4,
+        "coOcc": 2
+      },
+      {
+        "from": 78,
+        "to": 4,
+        "coOcc": 1
+      },
+      {
+        "from": 75,
+        "to": 79,
+        "coOcc": 1
+      },
+      {
+        "from": 4,
+        "to": 79,
+        "coOcc": 1
+      },
+      {
+        "from": 79,
+        "to": 4,
+        "coOcc": 1
+      },
+      {
+        "from": 75,
+        "to": 80,
+        "coOcc": 1
+      },
+      {
+        "from": 4,
+        "to": 80,
+        "coOcc": 1
+      },
+      {
+        "from": 75,
+        "to": 81,
+        "coOcc": 1
+      },
+      {
+        "from": 80,
+        "to": 81,
+        "coOcc": 1
+      },
+      {
+        "from": 82,
+        "to": 83,
+        "coOcc": 1
+      },
+      {
+        "from": 82,
+        "to": 84,
+        "coOcc": 1
+      },
+      {
+        "from": 83,
+        "to": 84,
+        "coOcc": 1
+      },
+      {
+        "from": 82,
+        "to": 58,
+        "coOcc": 1
+      },
+      {
+        "from": 84,
+        "to": 58,
+        "coOcc": 1
+      },
+      {
+        "from": 82,
+        "to": 4,
+        "coOcc": 1
+      },
+      {
+        "from": 82,
+        "to": 5,
+        "coOcc": 1
+      },
+      {
+        "from": 82,
+        "to": 85,
+        "coOcc": 1
+      },
+      {
+        "from": 5,
+        "to": 85,
+        "coOcc": 1
+      },
+      {
+        "from": 82,
+        "to": 86,
+        "coOcc": 1
+      },
+      {
+        "from": 85,
+        "to": 86,
+        "coOcc": 1
+      },
+      {
+        "from": 82,
+        "to": 87,
+        "coOcc": 1
+      },
+      {
+        "from": 86,
+        "to": 87,
+        "coOcc": 1
+      },
+      {
+        "from": 82,
+        "to": 88,
+        "coOcc": 1
+      },
+      {
+        "from": 87,
+        "to": 88,
+        "coOcc": 1
+      },
+      {
+        "from": 82,
+        "to": 66,
+        "coOcc": 1
+      },
+      {
+        "from": 88,
+        "to": 66,
+        "coOcc": 1
+      },
+      {
+        "from": 82,
+        "to": 89,
+        "coOcc": 1
+      },
+      {
+        "from": 66,
+        "to": 89,
+        "coOcc": 1
+      },
+      {
+        "from": 82,
+        "to": 90,
+        "coOcc": 1
+      },
+      {
+        "from": 89,
+        "to": 90,
+        "coOcc": 1
+      },
+      {
+        "from": 82,
+        "to": 91,
+        "coOcc": 1
+      },
+      {
+        "from": 90,
+        "to": 91,
+        "coOcc": 1
+      },
+      {
+        "from": 82,
+        "to": 92,
+        "coOcc": 1
+      },
+      {
+        "from": 91,
+        "to": 92,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 76,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 69,
+        "coOcc": 1
+      },
+      {
+        "from": 76,
+        "to": 69,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 84,
+        "coOcc": 1
+      },
+      {
+        "from": 69,
+        "to": 84,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 94,
+        "coOcc": 1
+      },
+      {
+        "from": 84,
+        "to": 94,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 95,
+        "coOcc": 1
+      },
+      {
+        "from": 94,
+        "to": 95,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 36,
+        "coOcc": 1
+      },
+      {
+        "from": 95,
+        "to": 36,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 96,
+        "coOcc": 1
+      },
+      {
+        "from": 36,
+        "to": 96,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 97,
+        "coOcc": 1
+      },
+      {
+        "from": 96,
+        "to": 97,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 17,
+        "coOcc": 1
+      },
+      {
+        "from": 97,
+        "to": 17,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 98,
+        "coOcc": 1
+      },
+      {
+        "from": 17,
+        "to": 98,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 99,
+        "coOcc": 1
+      },
+      {
+        "from": 98,
+        "to": 99,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 4,
+        "coOcc": 2
+      },
+      {
+        "from": 99,
+        "to": 4,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 100,
+        "coOcc": 1
+      },
+      {
+        "from": 4,
+        "to": 100,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 101,
+        "coOcc": 1
+      },
+      {
+        "from": 100,
+        "to": 101,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 102,
+        "coOcc": 1
+      },
+      {
+        "from": 101,
+        "to": 102,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 103,
+        "coOcc": 1
+      },
+      {
+        "from": 102,
+        "to": 103,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 104,
+        "coOcc": 1
+      },
+      {
+        "from": 103,
+        "to": 104,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 105,
+        "coOcc": 1
+      },
+      {
+        "from": 104,
+        "to": 105,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 106,
+        "coOcc": 1
+      },
+      {
+        "from": 105,
+        "to": 106,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 14,
+        "coOcc": 1
+      },
+      {
+        "from": 106,
+        "to": 14,
+        "coOcc": 1
+      },
+      {
+        "from": 14,
+        "to": 4,
+        "coOcc": 1
+      },
+      {
+        "from": 93,
+        "to": 107,
+        "coOcc": 1
+      },
+      {
+        "from": 4,
+        "to": 107,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 1,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 2,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 94,
+        "coOcc": 1
+      },
+      {
+        "from": 2,
+        "to": 94,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 109,
+        "coOcc": 1
+      },
+      {
+        "from": 94,
+        "to": 109,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 11,
+        "coOcc": 1
+      },
+      {
+        "from": 109,
+        "to": 11,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 110,
+        "coOcc": 1
+      },
+      {
+        "from": 11,
+        "to": 110,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 111,
+        "coOcc": 1
+      },
+      {
+        "from": 110,
+        "to": 111,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 112,
+        "coOcc": 1
+      },
+      {
+        "from": 111,
+        "to": 112,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 113,
+        "coOcc": 1
+      },
+      {
+        "from": 112,
+        "to": 113,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 20,
+        "coOcc": 1
+      },
+      {
+        "from": 113,
+        "to": 20,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 114,
+        "coOcc": 1
+      },
+      {
+        "from": 20,
+        "to": 114,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 105,
+        "coOcc": 2
+      },
+      {
+        "from": 114,
+        "to": 105,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 115,
+        "coOcc": 1
+      },
+      {
+        "from": 105,
+        "to": 115,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 116,
+        "coOcc": 1
+      },
+      {
+        "from": 115,
+        "to": 116,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 117,
+        "coOcc": 1
+      },
+      {
+        "from": 116,
+        "to": 117,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 10,
+        "coOcc": 1
+      },
+      {
+        "from": 117,
+        "to": 10,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 118,
+        "coOcc": 1
+      },
+      {
+        "from": 10,
+        "to": 118,
+        "coOcc": 1
+      },
+      {
+        "from": 118,
+        "to": 105,
+        "coOcc": 1
+      },
+      {
+        "from": 108,
+        "to": 119,
+        "coOcc": 1
+      },
+      {
+        "from": 105,
+        "to": 119,
+        "coOcc": 1
+      },
+      {
+        "from": 120,
+        "to": 1,
+        "coOcc": 1
+      },
+      {
+        "from": 120,
+        "to": 121,
+        "coOcc": 1
+      },
+      {
+        "from": 1,
+        "to": 121,
+        "coOcc": 1
+      },
+      {
+        "from": 120,
+        "to": 111,
+        "coOcc": 1
+      },
+      {
+        "from": 121,
+        "to": 111,
+        "coOcc": 1
+      },
+      {
+        "from": 120,
+        "to": 122,
+        "coOcc": 1
+      },
+      {
+        "from": 111,
+        "to": 122,
+        "coOcc": 1
+      },
+      {
+        "from": 120,
+        "to": 123,
+        "coOcc": 1
+      },
+      {
+        "from": 122,
+        "to": 123,
+        "coOcc": 1
+      },
+      {
+        "from": 120,
+        "to": 124,
+        "coOcc": 1
+      },
+      {
+        "from": 123,
+        "to": 124,
+        "coOcc": 2
+      },
+      {
+        "from": 120,
+        "to": 125,
+        "coOcc": 1
+      },
+      {
+        "from": 124,
+        "to": 125,
+        "coOcc": 1
+      },
+      {
+        "from": 120,
+        "to": 4,
+        "coOcc": 1
+      },
+      {
+        "from": 125,
+        "to": 4,
+        "coOcc": 2
+      },
+      {
+        "from": 120,
+        "to": 126,
+        "coOcc": 1
+      },
+      {
+        "from": 4,
+        "to": 126,
+        "coOcc": 2
+      },
+      {
+        "from": 127,
+        "to": 8,
+        "coOcc": 1
+      },
+      {
+        "from": 127,
+        "to": 20,
+        "coOcc": 1
+      },
+      {
+        "from": 8,
+        "to": 20,
+        "coOcc": 1
+      },
+      {
+        "from": 127,
+        "to": 128,
+        "coOcc": 1
+      },
+      {
+        "from": 20,
+        "to": 128,
+        "coOcc": 1
+      },
+      {
+        "from": 127,
+        "to": 17,
+        "coOcc": 2
+      },
+      {
+        "from": 128,
+        "to": 17,
+        "coOcc": 1
+      },
+      {
+        "from": 127,
+        "to": 129,
+        "coOcc": 1
+      },
+      {
+        "from": 17,
+        "to": 129,
+        "coOcc": 1
+      },
+      {
+        "from": 127,
+        "to": 90,
+        "coOcc": 1
+      },
+      {
+        "from": 129,
+        "to": 90,
+        "coOcc": 1
+      },
+      {
+        "from": 127,
+        "to": 130,
+        "coOcc": 1
+      },
+      {
+        "from": 90,
+        "to": 130,
+        "coOcc": 1
+      },
+      {
+        "from": 127,
+        "to": 131,
+        "coOcc": 1
+      },
+      {
+        "from": 130,
+        "to": 131,
+        "coOcc": 1
+      },
+      {
+        "from": 127,
+        "to": 132,
+        "coOcc": 1
+      },
+      {
+        "from": 131,
+        "to": 132,
+        "coOcc": 1
+      },
+      {
+        "from": 127,
+        "to": 58,
+        "coOcc": 1
+      },
+      {
+        "from": 132,
+        "to": 58,
+        "coOcc": 1
+      },
+      {
+        "from": 127,
+        "to": 36,
+        "coOcc": 1
+      },
+      {
+        "from": 58,
+        "to": 36,
+        "coOcc": 1
+      },
+      {
+        "from": 127,
+        "to": 133,
+        "coOcc": 1
+      },
+      {
+        "from": 36,
+        "to": 133,
+        "coOcc": 1
+      },
+      {
+        "from": 133,
+        "to": 17,
+        "coOcc": 1
+      },
+      {
+        "from": 127,
+        "to": 134,
+        "coOcc": 1
+      },
+      {
+        "from": 17,
+        "to": 134,
+        "coOcc": 1
+      },
+      {
+        "from": 127,
+        "to": 105,
+        "coOcc": 1
+      },
+      {
+        "from": 134,
+        "to": 105,
+        "coOcc": 1
+      },
+      {
+        "from": 127,
+        "to": 135,
+        "coOcc": 1
+      },
+      {
+        "from": 105,
+        "to": 135,
+        "coOcc": 1
+      },
+      {
+        "from": 127,
+        "to": 4,
+        "coOcc": 1
+      },
+      {
+        "from": 135,
+        "to": 4,
+        "coOcc": 1
+      },
+      {
+        "from": 127,
+        "to": 136,
+        "coOcc": 1
+      },
+      {
+        "from": 4,
+        "to": 136,
+        "coOcc": 1
+      },
+      {
+        "from": 127,
+        "to": 137,
+        "coOcc": 1
+      },
+      {
+        "from": 136,
+        "to": 137,
+        "coOcc": 1
+      },
+      {
+        "from": 138,
+        "to": 1,
+        "coOcc": 1
+      },
+      {
+        "from": 138,
+        "to": 139,
+        "coOcc": 1
+      },
+      {
+        "from": 1,
+        "to": 139,
+        "coOcc": 1
+      },
+      {
+        "from": 138,
+        "to": 140,
+        "coOcc": 1
+      },
+      {
+        "from": 139,
+        "to": 140,
+        "coOcc": 1
+      },
+      {
+        "from": 138,
+        "to": 111,
+        "coOcc": 1
+      },
+      {
+        "from": 140,
+        "to": 111,
+        "coOcc": 1
+      },
+      {
+        "from": 138,
+        "to": 115,
+        "coOcc": 1
+      },
+      {
+        "from": 111,
+        "to": 115,
+        "coOcc": 1
+      },
+      {
+        "from": 138,
+        "to": 27,
+        "coOcc": 1
+      },
+      {
+        "from": 115,
+        "to": 27,
+        "coOcc": 1
+      },
+      {
+        "from": 138,
+        "to": 141,
+        "coOcc": 1
+      },
+      {
+        "from": 27,
+        "to": 141,
+        "coOcc": 1
+      },
+      {
+        "from": 138,
+        "to": 142,
+        "coOcc": 1
+      },
+      {
+        "from": 141,
+        "to": 142,
+        "coOcc": 1
+      },
+      {
+        "from": 138,
+        "to": 143,
+        "coOcc": 2
+      },
+      {
+        "from": 142,
+        "to": 143,
+        "coOcc": 1
+      },
+      {
+        "from": 138,
+        "to": 144,
+        "coOcc": 2
+      },
+      {
+        "from": 143,
+        "to": 144,
+        "coOcc": 2
+      },
+      {
+        "from": 138,
+        "to": 145,
+        "coOcc": 2
+      },
+      {
+        "from": 144,
+        "to": 145,
+        "coOcc": 2
+      },
+      {
+        "from": 138,
+        "to": 146,
+        "coOcc": 1
+      },
+      {
+        "from": 145,
+        "to": 146,
+        "coOcc": 1
+      },
+      {
+        "from": 138,
+        "to": 147,
+        "coOcc": 1
+      },
+      {
+        "from": 146,
+        "to": 147,
+        "coOcc": 1
+      },
+      {
+        "from": 138,
+        "to": 116,
+        "coOcc": 1
+      },
+      {
+        "from": 147,
+        "to": 116,
+        "coOcc": 1
+      },
+      {
+        "from": 116,
+        "to": 143,
+        "coOcc": 1
+      },
+      {
+        "from": 138,
+        "to": 148,
+        "coOcc": 1
+      },
+      {
+        "from": 145,
+        "to": 148,
+        "coOcc": 1
+      },
+      {
+        "from": 138,
+        "to": 149,
+        "coOcc": 1
+      },
+      {
+        "from": 148,
+        "to": 149,
+        "coOcc": 1
+      },
+      {
+        "from": 138,
+        "to": 150,
+        "coOcc": 1
+      },
+      {
+        "from": 149,
+        "to": 150,
+        "coOcc": 1
+      },
+      {
+        "from": 138,
+        "to": 151,
+        "coOcc": 1
+      },
+      {
+        "from": 150,
+        "to": 151,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 153,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 72,
+        "coOcc": 1
+      },
+      {
+        "from": 153,
+        "to": 72,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 154,
+        "coOcc": 1
+      },
+      {
+        "from": 72,
+        "to": 154,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 105,
+        "coOcc": 2
+      },
+      {
+        "from": 154,
+        "to": 105,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 155,
+        "coOcc": 1
+      },
+      {
+        "from": 105,
+        "to": 155,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 111,
+        "coOcc": 1
+      },
+      {
+        "from": 155,
+        "to": 111,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 156,
+        "coOcc": 1
+      },
+      {
+        "from": 111,
+        "to": 156,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 17,
+        "coOcc": 1
+      },
+      {
+        "from": 156,
+        "to": 17,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 115,
+        "coOcc": 1
+      },
+      {
+        "from": 17,
+        "to": 115,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 157,
+        "coOcc": 1
+      },
+      {
+        "from": 115,
+        "to": 157,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 149,
+        "coOcc": 1
+      },
+      {
+        "from": 157,
+        "to": 149,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 66,
+        "coOcc": 1
+      },
+      {
+        "from": 149,
+        "to": 66,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 158,
+        "coOcc": 1
+      },
+      {
+        "from": 66,
+        "to": 158,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 123,
+        "coOcc": 1
+      },
+      {
+        "from": 158,
+        "to": 123,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 124,
+        "coOcc": 1
+      },
+      {
+        "from": 124,
+        "to": 105,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 125,
+        "coOcc": 1
+      },
+      {
+        "from": 105,
+        "to": 125,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 4,
+        "coOcc": 1
+      },
+      {
+        "from": 152,
+        "to": 126,
+        "coOcc": 1
+      }
+    ]
+  },
+  "cns": {},
+  "lastSentenceLabel": "sJe suis {yourname}, un chatterbot apprenant.",
+  "lastTokenLabels": [
+    "wJe",
+    "wsuis",
+    "w{yourname},",
+    "wun",
+    "wchatterbot",
+    "wapprenant.",
+    "wCela",
+    "wsignifie",
+    "wque",
+    "wje",
+    "wsuis",
+    "wcapable",
+    "wd'apprendre",
+    "wà",
+    "wparler",
+    "wà",
+    "wpartir",
+    "wde",
+    "wce",
+    "wque",
+    "wvous",
+    "wme",
+    "wdites.",
+    "wUn",
+    "wchatterbot",
+    "west",
+    "wun",
+    "wprogramme",
+    "wconçu",
+    "wpour",
+    "wdiscuter",
+    "wavec",
+    "wun",
+    "whumain.",
+    "wBenoît",
+    "wParmentier",
+    "wavait",
+    "wtrouvé",
+    "wune",
+    "wtraduction",
+    "wamusante",
+    "wde",
+    "wchatterbot:",
+    "wbot",
+    "wparleur.",
+    "wE",
+    "wC",
+    "wT",
+    "wO",
+    "wR,",
+    "wmon",
+    "wacronyme",
+    "wsignifie",
+    "wEntité",
+    "wCybernétique",
+    "wTotalement",
+    "wObligée",
+    "wde",
+    "wRépondre.",
+    "wMon",
+    "wnom",
+    "west",
+    "waussi",
+    "wun",
+    "wclin",
+    "wd'œil",
+    "wau",
+    "wnom",
+    "wde",
+    "wmon",
+    "wprédécesseur,",
+    "wAchille.",
+    "wDans",
+    "wla",
+    "wmythologie",
+    "wgrecque,",
+    "wAchille",
+    "wet",
+    "wHector",
+    "wse",
+    "wsont",
+    "waffrontés.",
+    "wMais",
+    "wici,",
+    "wje",
+    "wsuis",
+    "wplutôt",
+    "wun",
+    "wsuccesseur,",
+    "wun",
+    "wfils",
+    "wd'Achille.",
+    "wIl",
+    "wétait",
+    "waussi",
+    "wun",
+    "wchatterbot",
+    "wplacé",
+    "wsur",
+    "wIRC",
+    "wdans",
+    "wla",
+    "wfin",
+    "wdes",
+    "wannées",
+    "w1990.",
+    "wMais",
+    "wAchille",
+    "wétait",
+    "wplus",
+    "wsimple:",
+    "wune",
+    "wcommande",
+    "wpermettait",
+    "wde",
+    "wlui",
+    "wenseigner",
+    "wun",
+    "wphrase,",
+    "wqu'il",
+    "wpouvait",
+    "wemployer",
+    "wlittéralement",
+    "wen",
+    "wréaction",
+    "wà",
+    "wun",
+    "wstimulus.",
+    "wJe",
+    "wsuis",
+    "wplus",
+    "wsophistiqué:",
+    "wje",
+    "wdécompose",
+    "wles",
+    "wphrases",
+    "wqu'on",
+    "wme",
+    "wdit",
+    "wen",
+    "wmots,",
+    "wou",
+    "wtokens,",
+    "wque",
+    "wj'organise",
+    "wen",
+    "wséquences.",
+    "wJe",
+    "wcalcule",
+    "wles",
+    "wprobabilités",
+    "wqu'un",
+    "wmot",
+    "wsuive",
+    "wun",
+    "wautre.",
+    "wCela",
+    "wme",
+    "wpermet",
+    "wde",
+    "wgénérer",
+    "wdes",
+    "wphrases,",
+    "wmais",
+    "wj'introduis",
+    "waussi",
+    "wune",
+    "wnotion",
+    "wde",
+    "wcréativité",
+    "wen",
+    "wutilisant",
+    "wun",
+    "wchoix",
+    "waléatoire.",
+    "wJe",
+    "wchoisis",
+    "wparmi",
+    "wles",
+    "wmots,",
+    "wpour",
+    "wfaire",
+    "wsimple,",
+    "wqui",
+    "wont",
+    "wété",
+    "wrécemment",
+    "wutilisés,",
+    "wou",
+    "wqui",
+    "wont",
+    "wété",
+    "wactivés",
+    "wpar",
+    "wces",
+    "wderniers.",
+    "wL'activation",
+    "wse",
+    "wpropage",
+    "wen",
+    "wsuivant",
+    "wles",
+    "wséquences",
+    "wde",
+    "wmots,",
+    "wpondérées",
+    "wpar",
+    "wla",
+    "wprobabilité",
+    "wqu'un",
+    "wmot",
+    "wen",
+    "wsuive",
+    "wun",
+    "wautre."
+  ]
+}
