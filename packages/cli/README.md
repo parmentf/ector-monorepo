@@ -1,5 +1,7 @@
 # `@ector/cli`
 
+[![npm version](https://badge.fury.io/js/%40ector%2Fcli.svg)](https://badge.fury.io/js/%40ector%2Fcli)
+
 Interactive command line interface to ECTOR, the learning chatterbot.
 
 ## Usage

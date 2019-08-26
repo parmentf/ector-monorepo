@@ -1,5 +1,7 @@
 # `@ector/samples`
 
+[![npm version](https://badge.fury.io/js/%40ector%2Fsamples.svg)](https://badge.fury.io/js/%40ector%2Fsamples)
+
 A package of different ECTOR's backups.
 
 Because @ector/cli does not come with any knowledge.
