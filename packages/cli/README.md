@@ -128,7 +128,7 @@ On Linux, use `Ctrl-D` to quit.
 It closes the standard input.
 
 ```bash
-$ node packages/cli/bin/cli chat
+$ ector chat
 > Hello ECTOR, how do you do?
 Hello Guy, how do you do?
 > I'm glad to meet you.
@@ -136,4 +136,24 @@ I'm glad to make this file searchable.
 > I did not expect you to use those words.
 I did not expect you to make this file searchable.
 >
+```
+
+## use
+
+Use another file for `ector.json`.
+
+> **Warning**: `use` will remove the current `./ector.json`, and replace it with
+> another one.
+
+```bash
+$ ector use another-ector.json
+Loaded new ECTOR
+```
+
+You can also install [`@ector/samples`](../samples) to use any of its ECTOR
+files.
+
+```bash
+npm i @ector/samples
+ector use en-bot
 ```
