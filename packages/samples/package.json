@@ -1,0 +1,34 @@
+{
+  "name": "@ector/samples",
+  "version": "0.0.0",
+  "description": "Examples of ECTOR's minds",
+  "keywords": [
+    "ector",
+    "concept",
+    "network",
+    "examples"
+  ],
+  "author": "François Parmentier <francois.parmentier@gmail.com>",
+  "homepage": "https://github.com/parmentf/ector-monorepo#readme",
+  "license": "MIT",
+  "main": "lib/samples.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parmentf/ector-monorepo.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/parmentf/ector-monorepo/issues"
+  }
+}
