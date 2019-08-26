@@ -39,5 +39,8 @@
   },
   "bugs": {
     "url": "https://github.com/parmentf/ector-monorepo/issues"
+  },
+  "devDependencies": {
+    "@ector/samples": "0.0.0"
   }
 }

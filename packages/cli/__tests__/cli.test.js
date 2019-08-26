@@ -171,5 +171,27 @@ describe('@ector/cli ector', () => {
                 expect(stdout).toBe('');
                 expect(stderr).toBe('./foo.json not found.');
             }));
+
+        it('should load an @ector/samples file', () =>
+            tester(
+                require.resolve('../bin/cli'),
+                'use',
+                'fr-bot'
+            ).then(({ code, stdout, stderr }) => {
+                expect(code).toBe(0);
+                expect(stdout).toBe('Loaded new fr-bot');
+                expect(stderr).toBe('');
+            }));
+
+        it('should not load an unexisting @ector/samples file', () =>
+            tester(
+                require.resolve('../bin/cli'),
+                'use',
+                'foobar'
+            ).then(({ code, stdout, stderr }) => {
+                expect(code).toBe(0);
+                expect(stdout).toBe('');
+                expect(stderr).toBe('foobar not found.');
+            }));
     });
 });

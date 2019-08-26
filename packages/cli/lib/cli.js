@@ -150,13 +150,13 @@ const cli = function cli(cwd) {
                         return;
                     }
                     if (!samples[file]) {
-                        console.error(`${file} not found in @ector/samples`);
+                        console.error(`${file} not found.`);
                         return;
                     }
                     removeEctorFile(cwd);
                     fs.copyFileSync(samples[file].path, `${cwd}/ector.json`);
                     const { name } = getEctorFileContent(cwd);
-                    console.log(`Loaded new ${name}`);
+                    console.log(`Loaded new ${file}`);
                 }
             },
         );
