@@ -113,7 +113,7 @@ $ ector learn < book.txt
 Learned.
 ```
 
-Or (to learn Time machine from H.G.Wells):
+Or (to learn _The Time machine_ from H.G.Wells):
 
 ```bash
 $ curl https://www.gutenberg.org/files/35/35-0.txt | ector learn
