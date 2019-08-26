@@ -110,6 +110,27 @@ describe('@ector/cli ector', () => {
             expect(fileContent.cn.node.length).toBeGreaterThan(0);
         });
     });
-    describe('about', () => {});
+
+    // These tests should follow the learn tests
+    describe('about', () => {
+        it('should give a sentence', () =>
+            tester(require.resolve('../bin/cli'), 'about', 'keywords.').then(
+                ({ code, stdout, stderr }) => {
+                    expect(code).toBe(0);
+                    expect(stdout).toBe("[ 'keywords.' ]");
+                    expect(stderr).toBe('');
+                },
+            ));
+
+        it('should give nothing when no sentence match', () =>
+            tester(require.resolve('../bin/cli'), 'about', 'nothing').then(
+                ({ code, stdout, stderr }) => {
+                    expect(code).toBe(0);
+                    expect(stdout).toBe('');
+                    expect(stderr).toBe('Not found.');
+                },
+            ));
+    });
+
     describe('chat', () => {});
 });

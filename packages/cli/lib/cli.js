@@ -73,7 +73,10 @@ const cli = function cli(cwd) {
                     /** @type {string} */
                     let chunk;
                     // Use a loop to make sure we read all available data.
-                    while ((chunk = /** @type {string} */(process.stdin.read())) !== null) {
+                    while (
+                        (chunk = /** @type {string} */ (process.stdin.read())) !==
+                        null
+                    ) {
                         chunk = chunk
                             .replace(/\r\n/g, ' ')
                             .replace(/\n/g, ' ')
@@ -88,6 +91,20 @@ const cli = function cli(cwd) {
                     setEctorFileContent(ector);
                     process.stdout.write('Learned.');
                 });
+            },
+        )
+        .command(
+            'about [tokens..]',
+            'find sentences about tokens',
+            () => {},
+            ({ tokens }) => {
+                const about = ECTOR.about(ector, tokens.join(' '));
+                const res = Object.keys(about.cns['@about']);
+                if (res.length === 0) {
+                    console.error('Not found.');
+                    return;
+                }
+                console.log(res.map(s => s.slice(1)));
             },
         );
 };
