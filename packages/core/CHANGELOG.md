@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/parmentf/ector-monorepo/compare/@ector/core@1.0.2...@ector/core@1.1.0) (2019-08-26)
+
+
+### Features
+
+* **core:** Add an about command ([db8361f](https://github.com/parmentf/ector-monorepo/commit/db8361f))
+
+
+
+
+
 ## [1.0.2](https://github.com/parmentf/ector-monorepo/compare/@ector/core@1.0.1...@ector/core@1.0.2) (2019-08-24)
 
 

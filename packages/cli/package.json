@@ -1,6 +1,6 @@
 {
   "name": "@ector/cli",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Interactive command line interface to ECTOR, the learning chatterbot",
   "keywords": [
     "bot",
@@ -34,7 +34,7 @@
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "dependencies": {
-    "@ector/core": "1.0.2",
+    "@ector/core": "1.1.0",
     "yargs": "14.0.0"
   },
   "bugs": {

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/parmentf/ector-monorepo/compare/@ector/state@1.0.2...@ector/state@1.0.3) (2019-08-26)
+
+
+### Bug Fixes
+
+* **state:** Fix getActivationValue ([ee63291](https://github.com/parmentf/ector-monorepo/commit/ee63291))
+
+
+
+
+
 ## [1.0.2](https://github.com/parmentf/ector-monorepo/compare/@ector/state@1.0.1...@ector/state@1.0.2) (2019-08-23)
 
 
