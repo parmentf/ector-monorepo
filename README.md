@@ -11,6 +11,7 @@ A bunch of ECTOR node packages
 - [x] [state](./packages/state)
 - [x] [core](./packages/core)
 - [x] [cli](./packages/cli)
+- [ ] [samples](./packages/samples)
 - [ ] backend
 - [ ] browser (or svelte)
 - [ ] hubot
