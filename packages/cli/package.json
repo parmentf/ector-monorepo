@@ -1,6 +1,6 @@
 {
   "name": "@ector/cli",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Interactive command line interface to ECTOR, the learning chatterbot",
   "keywords": [
     "bot",
@@ -41,6 +41,6 @@
     "url": "https://github.com/parmentf/ector-monorepo/issues"
   },
   "devDependencies": {
-    "@ector/samples": "0.0.0"
+    "@ector/samples": "1.0.0"
   }
 }

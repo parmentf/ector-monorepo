@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/parmentf/ector-monorepo/compare/@ector/cli@1.0.0...@ector/cli@1.1.0) (2019-08-26)
+
+
+### Features
+
+* **cli:** Add use command ([01fb0fa](https://github.com/parmentf/ector-monorepo/commit/01fb0fa))
+* **cli:** Improve use command ([a96d647](https://github.com/parmentf/ector-monorepo/commit/a96d647))
+
+
+
+
+
 # 1.0.0 (2019-08-26)
 
 
