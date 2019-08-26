@@ -142,7 +142,21 @@ const cli = function cli(cwd) {
                     const { name } = getEctorFileContent(cwd);
                     console.log(`Loaded new ${name}`);
                 } else {
-                    console.error('${file} not found.');
+                    let samples;
+                    try {
+                        samples = require('@ector/samples');
+                    } catch(e) {
+                        console.error(`${file} not found.`);
+                        return;
+                    }
+                    if (!samples[file]) {
+                        console.error(`${file} not found in @ector/samples`);
+                        return;
+                    }
+                    removeEctorFile(cwd);
+                    fs.copyFileSync(samples[file].path, `${cwd}/ector.json`);
+                    const { name } = getEctorFileContent(cwd);
+                    console.log(`Loaded new ${name}`);
                 }
             },
         );
