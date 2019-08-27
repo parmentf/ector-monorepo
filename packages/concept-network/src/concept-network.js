@@ -407,6 +407,10 @@ export function merge(cn1, cn2) {
             const node1index = getNodeIndex(cn1, node1.label);
             node1.occ += node2.occ;
             cn.node[node1index] = node1;
+        } else {
+            cn = addNode(cn, node2.label);
+            const nodeIndex = getNodeIndex(cn, node2.label);
+            cn.node[nodeIndex] = { ...node2 };
         }
         return cn;
     }, cn);
@@ -421,6 +425,14 @@ export function merge(cn1, cn2) {
             const link1index = getLinkIndex2(cn1, link2.from, link2.to);
             link1.coOcc += link2.coOcc;
             cn.link[link1index] = link1;
+        } else {
+            cn = addLink(
+                cn,
+                cn2.node[link2.from].label,
+                cn2.node[link2.to].label,
+            );
+            const linkIndex = getLinkIndex2(cn, link2.from, link2.to);
+            cn.link[linkIndex] = { ...link2 };
         }
         return cn;
     }, cn);
