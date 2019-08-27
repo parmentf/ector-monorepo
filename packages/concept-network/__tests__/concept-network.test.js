@@ -599,4 +599,19 @@ describe('@ector/concept-network', () => {
             });
         });
     });
+
+    describe('merge', () => {
+        it('should add occurrences and co-occurrences', () => {
+            expect(CN.merge({
+                node: [{ label: 'a', occ: 1 }, { label: 'b', occ: 2 }],
+                link: [{ from: 0, to: 1, coOcc: 1}]
+            }, {
+                node: [{ label: 'a', occ: 1 }, { label: 'b', occ: 1 }],
+                link: [{ from: 0, to: 1, coOcc: 1}]
+            })).toEqual({
+                node: [{ label: 'a', occ: 2 }, { label: 'b', occ: 3 }],
+                link: [{ from: 0, to: 1, coOcc: 2}]
+            });
+        });
+    });
 });
