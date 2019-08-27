@@ -53,6 +53,10 @@ describe('@ector/cli ector', () => {
     });
 
     describe('reply', () => {
+        beforeAll(() => {
+            removeEctorFile();
+        });
+
         it('should reply', () =>
             tester(require.resolve('../bin/cli'), 'reply', 'Hello.').then(
                 ({ code, stdout, stderr }) => {
@@ -68,13 +72,13 @@ describe('@ector/cli ector', () => {
             tester(
                 require.resolve('../bin/cli'),
                 'reply',
-                'Hello Botname, how are you?',
+                'Hello ECTOR, how are you?',
             ).then(({ code, stdout, stderr }) => {
                 expect(code).toBe(0);
-                expect(stdout).toBe('Hello Username, how are you?');
+                expect(stdout).toBe('Hello Guy, how are you?');
                 expect(stderr).toBe('');
                 const { response } = getEctorFileContent();
-                expect(response).toBe('Hello Username, how are you?');
+                expect(response).toBe('Hello Guy, how are you?');
             }));
     });
 
