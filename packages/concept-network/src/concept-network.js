@@ -1,5 +1,7 @@
 'use strict';
 
+import { link } from 'fs';
+
 /**
  * @typedef {Object<string, any>} ConceptNetwork
  * @property {ConceptNetworkNode[]} [node]
@@ -71,14 +73,16 @@ export function addNode(cn, label) {
             res.node.push({ label, occ: 1 });
         }
     } else {
-        res.node = [{
-            label,
-            occ: 1
-        }];
+        res.node = [
+            {
+                label,
+                occ: 1,
+            },
+        ];
     }
 
     return res;
-};
+}
 
 /**
  * Create a link between `from` and `to`, and increment `coOcc` by one.
@@ -98,7 +102,7 @@ export function addLink(cn, from, to) {
     if (!res.link) res.link = [];
     const link = res.link.find(l => l.from === fromIndex && l.to === toIndex);
     if (!link) {
-        res.link.push({ from: fromIndex, to: toIndex, coOcc: 1});
+        res.link.push({ from: fromIndex, to: toIndex, coOcc: 1 });
     } else {
         link.coOcc = link.coOcc + 1;
     }
@@ -175,19 +179,19 @@ export function removeNode(cn, label) {
     // remove the node, but do not shift next nodes' indices
     res2.node[nodeIndex] = undefined;
     // remove all ending undefined
-    const nodes = res2.node
-        .reduceRight(
-            /**
-             * @param {ConceptNetworkNode[]} nodes
-             * @param {ConceptNetworkNode} node
-             * @returns {ConceptNetworkNode[]}
-             */
-            (nodes, node) => {
-                if (!node && nodes.length === 0) return [];
-                nodes.push(node);
-                return nodes;
-            },
-            []);
+    const nodes = res2.node.reduceRight(
+        /**
+         * @param {ConceptNetworkNode[]} nodes
+         * @param {ConceptNetworkNode} node
+         * @returns {ConceptNetworkNode[]}
+         */
+        (nodes, node) => {
+            if (!node && nodes.length === 0) return [];
+            nodes.push(node);
+            return nodes;
+        },
+        [],
+    );
     res2.node = nodes.reverse();
     return res2;
 }
@@ -206,12 +210,15 @@ export function removeLinksOfNode(cn, label) {
     const nodeIndex = getNodeIndex(cn, label);
     const linksIndices = cn.link
         .map(l => l.from === nodeIndex || l.to === nodeIndex)
-        .map((found, i) => { if (found) return i; else return; });
+        .map((found, i) => {
+            if (found) return i;
+            else return;
+        });
     const link = cn.link.filter((l, i) => !linksIndices.includes(i));
     const res = {
         ...cn,
         link,
-    }
+    };
     return res;
 }
 
@@ -264,7 +271,9 @@ export function getLinkIndex(cn, from, to) {
  */
 export function getLinkIndex2(cn, fromIndex, toIndex) {
     if (!cn.link) return -1;
-    const linkIndex = cn.link.findIndex(l => l.from === fromIndex && l.to === toIndex);
+    const linkIndex = cn.link.findIndex(
+        l => l.from === fromIndex && l.to === toIndex,
+    );
     return linkIndex;
 }
 
@@ -379,4 +388,54 @@ export function incrementEnd(cn, label) {
         res.node[nodeIndex] = node;
     }
     return Object.freeze(res);
+}
+
+/**
+ * Merge two concept networks
+ *
+ * @export
+ * @param {ConceptNetwork} cn1
+ * @param {ConceptNetwork} cn2
+ * @returns {ConceptNetwork}
+ */
+export function merge(cn1, cn2) {
+    let cn = { ...cn1 };
+
+    cn = cn2.node.reduce((cn, node2) => {
+        const node1 = getNode(cn1, node2.label);
+        if (node1) {
+            const node1index = getNodeIndex(cn1, node1.label);
+            node1.occ += node2.occ;
+            cn.node[node1index] = node1;
+        } else {
+            cn = addNode(cn, node2.label);
+            const nodeIndex = getNodeIndex(cn, node2.label);
+            cn.node[nodeIndex] = { ...node2 };
+        }
+        return cn;
+    }, cn);
+
+    cn = cn2.link.reduce((cn, link2) => {
+        const link1 = getLink(
+            cn1,
+            cn2.node[link2.from].label,
+            cn2.node[link2.to].label,
+        );
+        if (link1) {
+            const link1index = getLinkIndex2(cn1, link2.from, link2.to);
+            link1.coOcc += link2.coOcc;
+            cn.link[link1index] = link1;
+        } else {
+            cn = addLink(
+                cn,
+                cn2.node[link2.from].label,
+                cn2.node[link2.to].label,
+            );
+            const linkIndex = getLinkIndex2(cn, link2.from, link2.to);
+            cn.link[linkIndex] = { ...link2 };
+        }
+        return cn;
+    }, cn);
+
+    return Object.freeze(cn);
 }
